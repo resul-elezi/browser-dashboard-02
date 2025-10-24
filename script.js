@@ -62,7 +62,10 @@ window.addEventListener('load', () => {
     console.log('event 2');
 })
 
-window.addEventListener('beforeunload', () => {
-    pageStatus.textContent = 'Webseite wird verlassen';
-    alert('Moechten Sie die Seite wirklich verlassen?');
+window.addEventListener('beforeunload', e => {
+    if (scrollY < THRESHOLD_HIGH) {
+        e.preventDefault();
+        // e.returnValue = 'Sie haben die Seite nicht bis zu Schluss angesehen';
+    }
+    // pageStatus.textContent = 'Webseite wird verlassen';
 })
