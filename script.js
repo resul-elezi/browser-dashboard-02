@@ -64,4 +64,5 @@ window.addEventListener('load', () => {
 
 window.addEventListener('beforeunload', () => {
     pageStatus.textContent = 'Webseite wird verlassen';
+    alert('Moechten Sie die Seite wirklich verlassen?');
 })
