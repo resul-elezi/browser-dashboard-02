@@ -54,8 +54,14 @@ const pageStatus = byId('page-status');
 
 document.addEventListener('DOMContentLoaded', () => {
     pageStatus.textContent = 'DOM geladen';
+    console.log('event 1');
 })
 
 window.addEventListener('load', () => {
     pageStatus.textContent = 'Webseite vollständig geladen';
+    console.log('event 2');
+})
+
+window.addEventListener('beforeunload', () => {
+    pageStatus.textContent = 'Webseite wird verlassen';
 })
