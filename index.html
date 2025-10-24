@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Browser Dashboard</h1>
+        <p class="subtitle">
+          Echtzeit-Informationen und Steuerung Ihres Browsers
+        </p>
+      </header>
+
+      <div class="dashboard">
+        <!-- 1. Browser-Umgebungsmonitor -->
+        <section class="panel" id="environment-monitor">
+          <div class="panel-header">
+            <div class="panel-icon">1</div>
+            <h2 class="panel-title">Browser-Umgebungsmonitor</h2>
+          </div>
+          <div class="panel-content">
+            <div class="status-item">
+              <span class="status-label">Fenstergröße:</span>
+              <span class="status-value" id="window-size">Wird geladen...</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Bildschirmauflösung:</span>
+              <span class="status-value" id="screen-resolution"
+                >Wird geladen...</span
+              >
+            </div>
+            <div class="status-item">
+              <span class="status-label">Scroll-Position:</span>
+              <span class="status-value" id="scroll-position"
+                >Wird geladen...</span
+              >
+            </div>
+            <div class="visualization" id="scroll-visualization">
+              Scroll-Visualisierung
+            </div>
+            <div class="status-item">
+              <span class="status-label">Seitenstatus:</span>
+              <span class="status-value" id="page-status">Wird geladen...</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Navigator-Informationen Panel -->
+        <section class="panel" id="navigator-info">
+          <div class="panel-header">
+            <div class="panel-icon">2</div>
+            <h2 class="panel-title">Navigator-Informationen</h2>
+          </div>
+          <div class="panel-content">
+            <div class="status-item">
+              <span class="status-label">Browser:</span>
+              <span class="status-value" id="browser-info"
+                >Wird geladen...</span
+              >
+            </div>
+            <div class="status-item">
+              <span class="status-label">Sprachen:</span>
+              <span class="status-value" id="languages">Wird geladen...</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Plattform:</span>
+              <span class="status-value" id="platform">Wird geladen...</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Cookies aktiv:</span>
+              <span class="status-value" id="cookies-enabled"
+                >Wird geladen...</span
+              >
+            </div>
+            <div class="status-item">
+              <span class="status-label">Do Not Track:</span>
+              <span class="status-value" id="do-not-track"
+                >Wird geladen...</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. URL-Analyzer -->
+        <section class="panel" id="url-analyzer">
+          <div class="panel-header">
+            <div class="panel-icon">3</div>
+            <h2 class="panel-title">URL-Analyzer</h2>
+          </div>
+          <div class="panel-content">
+            <div class="status-item">
+              <span class="status-label">Vollständige URL:</span>
+              <span class="status-value" id="full-url">Wird geladen...</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Protokoll:</span>
+              <span class="status-value" id="protocol">Wird geladen...</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Hostname:</span>
+              <span class="status-value" id="hostname">Wird geladen...</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Query-Parameter:</span>
+              <span class="status-value" id="query-params"
+                >Wird geladen...</span
+              >
+            </div>
+            <div class="btn-group">
+              <button class="btn" id="modify-url">URL ändern</button>
+              <button class="btn" id="update-history">
+                History aktualisieren
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Performance-Tracker -->
+        <section class="panel" id="performance-tracker">
+          <div class="panel-header">
+            <div class="panel-icon">4</div>
+            <h2 class="panel-title">Performance-Tracker</h2>
+          </div>
+          <div class="panel-content">
+            <div class="status-item">
+              <span class="status-label">DOM geladen:</span>
+              <span class="status-value" id="dom-loaded">Wird gemessen...</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Seite komplett:</span>
+              <span class="status-value" id="page-loaded"
+                >Wird gemessen...</span
+              >
+            </div>
+            <div class="visualization" id="performance-visualization">
+              Performance-Visualisierung
+            </div>
+            <div class="status-item">
+              <span class="status-label">Memory Usage:</span>
+              <span class="status-value" id="memory-usage"
+                >Wird gemessen...</span
+              >
+            </div>
+            <div class="progress-bar">
+              <div
+                class="progress"
+                id="memory-progress"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Interaktive Steuerungselemente -->
+        <section class="panel" id="window-controls">
+          <div class="panel-header">
+            <div class="panel-icon">5</div>
+            <h2 class="panel-title">Fenster-Steuerung</h2>
+          </div>
+          <div class="panel-content">
+            <div class="btn-group">
+              <button class="btn" id="open-window">Fenster öffnen</button>
+              <button class="btn" id="close-window">Fenster schließen</button>
+              <button class="btn" id="fullscreen">Vollbild</button>
+              <button class="btn" id="exit-fullscreen">
+                Vollbild verlassen
+              </button>
+            </div>
+            <div class="form-group">
+              <label for="scroll-to-element">Zu Element scrollen:</label>
+              <input
+                type="text"
+                id="scroll-to-element"
+                placeholder="Element-ID"
+              />
+              <button class="btn" id="scroll-to-button">Scrollen</button>
+            </div>
+            <div class="btn-group">
+              <button class="btn" id="show-alert">Alert anzeigen</button>
+              <button class="btn" id="show-confirm">Confirm anzeigen</button>
+              <button class="btn" id="show-prompt">Prompt anzeigen</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Storage-Manager -->
+        <section class="panel" id="storage-manager">
+          <div class="panel-header">
+            <div class="panel-icon">6</div>
+            <h2 class="panel-title">Storage-Manager</h2>
+          </div>
+          <div class="panel-content">
+            <div class="form-group">
+              <label for="storage-key">Schlüssel:</label>
+              <input type="text" id="storage-key" placeholder="Schlüsselname" />
+            </div>
+            <div class="form-group">
+              <label for="storage-value">Wert:</label>
+              <input type="text" id="storage-value" placeholder="Wert" />
+            </div>
+            <div class="btn-group">
+              <button class="btn" id="save-local">Local Storage</button>
+              <button class="btn" id="save-session">Session Storage</button>
+              <button class="btn" id="save-cookie">Cookie setzen</button>
+            </div>
+            <div class="visualization" id="storage-visualization">
+              Storage-Inhalte werden hier angezeigt
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. History Visualizer -->
+        <section class="panel" id="history-visualizer">
+          <div class="panel-header">
+            <div class="panel-icon">7</div>
+            <h2 class="panel-title">History Visualizer</h2>
+          </div>
+          <div class="panel-content">
+            <div class="status-item">
+              <span class="status-label">History-Länge:</span>
+              <span class="status-value" id="history-length"
+                >Wird geladen...</span
+              >
+            </div>
+            <div class="btn-group">
+              <button class="btn" id="history-back">Zurück</button>
+              <button class="btn" id="history-forward">Vorwärts</button>
+              <button class="btn" id="history-go">Gehe zu</button>
+            </div>
+            <div class="visualization" id="history-visualization">
+              History-Visualisierung
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Device-Orientation Monitor -->
+        <section class="panel" id="orientation-monitor">
+          <div class="panel-header">
+            <div class="panel-icon">8</div>
+            <h2 class="panel-title">Device-Orientation Monitor</h2>
+          </div>
+          <div class="panel-content">
+            <div class="status-item">
+              <span class="status-label">Alpha (Z-Achse):</span>
+              <span class="status-value" id="orientation-alpha"
+                >Nicht verfügbar</span
+              >
+            </div>
+            <div class="status-item">
+              <span class="status-label">Beta (X-Achse):</span>
+              <span class="status-value" id="orientation-beta"
+                >Nicht verfügbar</span
+              >
+            </div>
+            <div class="status-item">
+              <span class="status-label">Gamma (Y-Achse):</span>
+              <span class="status-value" id="orientation-gamma"
+                >Nicht verfügbar</span
+              >
+            </div>
+            <div class="visualization" id="orientation-visualization">
+              Orientierungs-Visualisierung
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Netzwerk-Status Anzeige -->
+        <section class="panel" id="network-status">
+          <div class="panel-header">
+            <div class="panel-icon">9</div>
+            <h2 class="panel-title">Netzwerk-Status</h2>
+          </div>
+          <div class="panel-content">
+            <div class="status-item">
+              <span class="status-label">Verbindungsstatus:</span>
+              <span class="status-value" id="connection-status"
+                >Wird geprüft...</span
+              >
+            </div>
+            <div class="status-item">
+              <span class="status-label">Download-Geschwindigkeit:</span>
+              <span class="status-value" id="download-speed"
+                >Wird gemessen...</span
+              >
+            </div>
+            <div class="status-item">
+              <span class="status-label">Latenz:</span>
+              <span class="status-value" id="latency">Wird gemessen...</span>
+            </div>
+            <div class="visualization" id="network-visualization">
+              Netzwerk-Visualisierung
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. Media Controller -->
+        <section class="panel" id="media-controller">
+          <div class="panel-header">
+            <div class="panel-icon">10</div>
+            <h2 class="panel-title">Media Controller</h2>
+          </div>
+          <div class="panel-content">
+            <div class="form-group">
+              <label for="volume-control">Lautstärke:</label>
+              <input
+                type="range"
+                id="volume-control"
+                min="0"
+                max="100"
+                value="50"
+              />
+              <span id="volume-display">50%</span>
+            </div>
+            <div class="btn-group">
+              <button class="btn" id="picture-in-picture">Bild-in-Bild</button>
+              <button class="btn" id="media-play">Play</button>
+              <button class="btn" id="media-pause">Pause</button>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Media-Metadaten:</span>
+              <span class="status-value" id="media-metadata">Keine</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Dein JavaScript kommt hier -->
+    <script src="script.js"></script>
+  </body>
+</html>
