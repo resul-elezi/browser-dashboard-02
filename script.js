@@ -65,7 +65,6 @@ window.addEventListener('load', () => {
 window.addEventListener('beforeunload', e => {
     if (scrollY < THRESHOLD_HIGH) {
         e.preventDefault();
-        // e.returnValue = 'Sie haben die Seite nicht bis zu Schluss angesehen';
+        e.returnValue = '';
     }
-    // pageStatus.textContent = 'Webseite wird verlassen';
 })
