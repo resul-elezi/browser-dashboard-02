@@ -63,7 +63,7 @@ window.addEventListener('load', () => {
 })
 
 window.addEventListener('beforeunload', e => {
-    if (scrollY < THRESHOLD_HIGH) {
+    if (scrollY < THRESHOLD_HIGH || scrollY === null) {
         e.preventDefault();
         e.returnValue = '';
     }
