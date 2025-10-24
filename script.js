@@ -52,6 +52,10 @@ window.addEventListener('scroll', () => {
 
 const pageStatus = byId('page-status');
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     pageStatus.textContent = 'DOM geladen';
+})
+
+window.addEventListener('load', () => {
+    pageStatus.textContent = 'Webseite vollständig geladen';
 })
