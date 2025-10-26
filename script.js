@@ -54,12 +54,10 @@ const pageStatus = byId('page-status');
 
 document.addEventListener('DOMContentLoaded', () => {
     pageStatus.textContent = 'DOM geladen';
-    console.log('event 1');
 })
 
 window.addEventListener('load', () => {
     pageStatus.textContent = 'Webseite vollständig geladen';
-    console.log('event 2');
 })
 
 window.addEventListener('beforeunload', e => {
@@ -68,3 +66,10 @@ window.addEventListener('beforeunload', e => {
         e.returnValue = '';
     }
 })
+
+// ** Navigator Informations
+
+const browserInfo = byId('browser-info');
+
+// browserInfo.textContent = navigator.appName;
+browserInfo.textContent = navigator.appCodeName + ', ' + navigator.appVersion;
