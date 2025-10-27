@@ -79,9 +79,23 @@ const cookiesActive = byId('cookies-enabled');
 const doNotTrack = byId('do-not-track');
 
 // browserInfo.textContent = navigator.appName;
-// browserInfo.textContent = navigator.appCodeName + ', ' + navigator.appVersion;
-browserInfo.textContent = navigator.userAgent.split(' ')[0];
-userLanguages.textContent = navigator.languages.split(' ')[0];
+// browserInfo.textContent = navigator.appName + ', ' + navigator.appVersion;
+
+const userAgent = navigator.userAgent;
+console.log(userAgent);
+
+// Browser-Name
+const browserName = navigator.userAgentData?.brands?.[0]?.brand || 
+                   (navigator.userAgent.includes("Chrome") ? "Chrome" : 
+                   navigator.userAgent.includes("Firefox") ? "Firefox" : 
+                   navigator.userAgent.includes("Safari") ? "Safari" : "Unbekannt");
+
+// Browser-Version (approximativ)
+const browserVersion = navigator.userAgentData?.brands?.[0]?.version || 
+                      navigator.appVersion;
+browserInfo.textContent = browserName + ' , ' + browserVersion;
+// browserInfo.textContent = navigator.userAgent.split(' ')[0];
+userLanguages.textContent = navigator.languages
 userPlatform.textContent = navigator.platform;
 if(navigator.cookieEnabled) {
     cookiesActive.textContent = 'Cookies sind aktiv';
