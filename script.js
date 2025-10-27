@@ -143,9 +143,11 @@ const fullUrlOutput = byId('full-url');
 const protocolOutput = byId('protocol');
 const hostOutput = byId('hostname');
 const queryOutput = byId('query-params');
-const fullUrl = new URL(document.URL);
+// const fullUrl = new URL(window.location);
+const fullUrl = window.location;
+console.log(fullUrl);
 
 fullUrlOutput.textContent = fullUrl;
 protocolOutput.textContent = fullUrl.protocol;
-hostOutput.textContent = fullUrl.hostname;
+hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
 hostOutput.textContent = fullUrl.hostname;
