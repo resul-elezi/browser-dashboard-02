@@ -37,12 +37,9 @@ const THRESHOLD_LOW = 100;
 const THRESHOLD_HIGH = 500;
 let currentScrollY = 0;
 let currentScrollX = 0;
+console.log(currentScrollY);
 
-// function getScrollPosition() {
-    
-// }
 window.addEventListener('scroll', () => {
-    // getScrollPosition();
     currentScrollY = window.scrollY;
     currentScrollX = window.scrollX;
     scrollPositionDisplay.textContent = `X: ${currentScrollX}, Y: ${currentScrollY}px`;
@@ -68,7 +65,6 @@ window.addEventListener('load', () => {
 })
 
 window.addEventListener('beforeunload', e => {
-    // getScrollPosition();
     if (currentScrollY < THRESHOLD_HIGH || currentScrollY === 0) {
         e.preventDefault();
         e.returnValue = '';
