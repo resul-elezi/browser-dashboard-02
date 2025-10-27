@@ -73,14 +73,14 @@ window.addEventListener('beforeunload', e => {
 // ** Navigator Informations
 
 const browserInfo = byId('browser-info');
-const userLanguage = byId('languages');
+const userLanguages = byId('languages');
 const userPlatform = byId('platform');
 const cookiesActive = byId('cookies-enabled');
 const doNotTrack = byId('do-not-track');
 
 // browserInfo.textContent = navigator.appName;
 browserInfo.textContent = navigator.appCodeName + ', ' + navigator.appVersion;
-userLanguage.textContent = navigator.language;
+userLanguages.textContent = navigator.languages;
 userPlatform.textContent = navigator.platform;
 if(navigator.cookieEnabled) {
     cookiesActive.textContent = 'Cookies sind aktiv';
