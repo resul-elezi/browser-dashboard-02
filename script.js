@@ -82,4 +82,22 @@ const doNotTrack = byId('do-not-track');
 browserInfo.textContent = navigator.appCodeName + ', ' + navigator.appVersion;
 userLanguage.textContent = navigator.language;
 userPlatform.textContent = navigator.platform;
-cookiesActive.textContent = navigator.cookieEnabled;
+if(navigator.cookieEnabled) {
+    cookiesActive.textContent = 'Cookies sind aktiv';
+
+}
+function isDoNotTrackActive() {
+    if (navigator.doNotTrack === "1" || navigator.doNotTrack === "yes") {
+      return true;
+    }
+    if (navigator.msDoNotTrack === "1") {
+      return true;
+    }
+    return false;
+  }
+  
+if (isDoNotTrackActive()) {
+    doNotTrack.textContent = 'Do not track ist aktiv';
+} else {
+    doNotTrack.textContent = 'Do not track ist nicht aktiv';
+}
