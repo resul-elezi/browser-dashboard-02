@@ -46,9 +46,9 @@ window.addEventListener('scroll', () => {
     if (scrollY < THRESHOLD_LOW) {
         scrollVisualization.style.background = 'forestgreen';
     } else if (scrollY >= THRESHOLD_LOW && scrollY < THRESHOLD_HIGH) {
-        scrollVisualization.style.backgroundColor = 'gold';
+        scrollVisualization.style.background = 'gold';
     } else {
-        scrollVisualization.style.backgroundColor = 'crimson';
+        scrollVisualization.style.background = 'crimson';
     }
 })
 
