@@ -35,18 +35,20 @@ const scrollPositionDisplay = byId('scroll-position');
 const scrollVisualization = byId('scroll-visualization');
 const THRESHOLD_LOW = 100;
 const THRESHOLD_HIGH = 500;
+let currentScrollY = 0;
+let currentScrollX = 0;
 
 // function getScrollPosition() {
     
 // }
 window.addEventListener('scroll', () => {
     // getScrollPosition();
-    const scrollY = window.scrollY;
-    const scrollX = window.scrollX;
-    scrollPositionDisplay.textContent = `X: ${scrollX}, Y: ${scrollY}px`;
-    if (scrollY < THRESHOLD_LOW) {
+    currentScrollY = window.scrollY;
+    currentScrollX = window.scrollX;
+    scrollPositionDisplay.textContent = `X: ${currentScrollX}, Y: ${currentScrollY}px`;
+    if (currentScrollY < THRESHOLD_LOW) {
         scrollVisualization.style.background = 'forestgreen';
-    } else if (scrollY >= THRESHOLD_LOW && scrollY < THRESHOLD_HIGH) {
+    } else if (currentScrollY >= THRESHOLD_LOW && currentScrollY < THRESHOLD_HIGH) {
         scrollVisualization.style.background = 'gold';
     } else {
         scrollVisualization.style.background = 'crimson';
@@ -67,7 +69,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener('beforeunload', e => {
     // getScrollPosition();
-    if (scrollY < THRESHOLD_HIGH || scrollY === 0) {
+    if (currentScrollY < THRESHOLD_HIGH || currentScrollY === 0) {
         e.preventDefault();
         e.returnValue = '';
     }
