@@ -73,8 +73,8 @@ window.addEventListener('beforeunload', e => {
 // ** Navigator Informations
 
 const browserInfo = byId('browser-info');
-const language = byId('languages');
+const userLanguage = byId('languages');
 
 // browserInfo.textContent = navigator.appName;
 browserInfo.textContent = navigator.appCodeName + ', ' + navigator.appVersion;
-language.textContent = navigator.languages;
+userLanguage.textContent = navigator.language;
