@@ -70,7 +70,7 @@ window.addEventListener('beforeunload', e => {
     }
 })
 
-// ** Navigator Informations
+// Navigator Informations
 
 const browserInfo = byId('browser-info');
 const userLanguages = byId('languages');
@@ -78,8 +78,8 @@ const userPlatform = byId('platform');
 const cookiesActive = byId('cookies-enabled');
 const doNotTrack = byId('do-not-track');
 
-const userAgent = navigator.userAgent;
-// Browser-Name
+// ** Browser-Name
+
 let browserName;
 if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userAgentData.brands[0] && navigator.userAgentData.brands[0].brand) {
     browserName = navigator.userAgentData.brands[0].brand;
@@ -93,7 +93,7 @@ if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userA
     browserName = "Unbekannt";
 }
 
-// Browser-Version
+// ** Browser-Version
 
 let browserVersion;
 if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userAgentData.brands[0] && navigator.userAgentData.brands[0].version) {
@@ -103,13 +103,24 @@ if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userA
     browserVersion = navigator.userAgent.split(' ')[8].slice(8);
 }
 browserInfo.textContent = browserName + ' , ' + browserVersion;
-// browserInfo.textContent = navigator.userAgent.split(' ')[0];
-userLanguages.textContent = navigator.languages
+
+// ** Languages
+
+userLanguages.textContent = navigator.languages;
+
+// ** Platform
+
 userPlatform.textContent = navigator.platform;
+
+// ** Cookies enabled
+
 if(navigator.cookieEnabled) {
     cookiesActive.textContent = 'Cookies sind aktiv';
 
 }
+
+// ** Do not track
+
 function isDoNotTrackActive() {
     if (navigator.doNotTrack === "1" || navigator.doNotTrack === "yes") {
       return true;
@@ -125,3 +136,8 @@ if (isDoNotTrackActive()) {
 } else {
     doNotTrack.textContent = 'Do not track ist nicht aktiv';
 }
+
+// URL analyzer
+
+const fullUrl = byId('full-url');
+fullUrl.textContent = document.URL;
