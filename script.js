@@ -101,8 +101,7 @@ let browserVersion;
 if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userAgentData.brands[0] && navigator.userAgentData.brands[0].version) {
     browserVersion = navigator.userAgentData.brands[0].version;
 } else {
-    let browser = navigator.userAgent.split(' ')[8];
-    browserVersion = browser.slice(8);
+    browserVersion = navigator.userAgent.split(' ')[8].slice(8);
 }
 browserInfo.textContent = browserName + ' , ' + browserVersion;
 // browserInfo.textContent = navigator.userAgent.split(' ')[0];
