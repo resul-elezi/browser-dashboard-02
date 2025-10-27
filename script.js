@@ -78,9 +78,6 @@ const userPlatform = byId('platform');
 const cookiesActive = byId('cookies-enabled');
 const doNotTrack = byId('do-not-track');
 
-// browserInfo.textContent = navigator.appName;
-// browserInfo.textContent = navigator.appName + ', ' + navigator.appVersion;
-
 const userAgent = navigator.userAgent;
 // Browser-Name
 let browserName;
@@ -97,10 +94,12 @@ if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userA
 }
 
 // Browser-Version
+
 let browserVersion;
 if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userAgentData.brands[0] && navigator.userAgentData.brands[0].version) {
     browserVersion = navigator.userAgentData.brands[0].version;
 } else {
+    // For Firefox, userAgentData.brands is not compatible with Firefox
     browserVersion = navigator.userAgent.split(' ')[8].slice(8);
 }
 browserInfo.textContent = browserName + ' , ' + browserVersion;
