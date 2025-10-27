@@ -82,17 +82,27 @@ const doNotTrack = byId('do-not-track');
 // browserInfo.textContent = navigator.appName + ', ' + navigator.appVersion;
 
 const userAgent = navigator.userAgent;
-console.log(userAgent);
-
 // Browser-Name
-const browserName = navigator.userAgentData?.brands?.[0]?.brand || 
-                   (navigator.userAgent.includes("Chrome") ? "Chrome" : 
-                   navigator.userAgent.includes("Firefox") ? "Firefox" : 
-                   navigator.userAgent.includes("Safari") ? "Safari" : "Unbekannt");
+let browserName;
+if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userAgentData.brands[0] && navigator.userAgentData.brands[0].brand) {
+    browserName = navigator.userAgentData.brands[0].brand;
+} else if (navigator.userAgent.includes("Chrome")) {
+    browserName = "Chrome";
+} else if (navigator.userAgent.includes("Firefox")) {
+    browserName = "Firefox";
+} else if (navigator.userAgent.includes("Safari")) {
+    browserName = "Safari";
+} else {
+    browserName = "Unbekannt";
+}
 
-// Browser-Version (approximativ)
-const browserVersion = navigator.userAgentData?.brands?.[0]?.version || 
-                      navigator.appVersion;
+// Browser-Version
+let browserVersion;
+if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userAgentData.brands[0] && navigator.userAgentData.brands[0].version) {
+    browserVersion = navigator.userAgentData.brands[0].version;
+} else {
+    browserVersion = navigator.appVersion;
+}
 browserInfo.textContent = browserName + ' , ' + browserVersion;
 // browserInfo.textContent = navigator.userAgent.split(' ')[0];
 userLanguages.textContent = navigator.languages
