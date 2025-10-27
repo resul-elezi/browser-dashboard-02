@@ -36,12 +36,13 @@ const scrollVisualization = byId('scroll-visualization');
 const THRESHOLD_LOW = 100;
 const THRESHOLD_HIGH = 500;
 
-function getScrollPosition() {
+// function getScrollPosition() {
+    
+// }
+window.addEventListener('scroll', () => {
+    // getScrollPosition();
     const scrollY = window.scrollY;
     const scrollX = window.scrollX;
-}
-window.addEventListener('scroll', () => {
-    getScrollPosition();
     scrollPositionDisplay.textContent = `X: ${scrollX}, Y: ${scrollY}px`;
     if (scrollY < THRESHOLD_LOW) {
         scrollVisualization.style.background = 'forestgreen';
@@ -65,7 +66,7 @@ window.addEventListener('load', () => {
 })
 
 window.addEventListener('beforeunload', e => {
-    getScrollPosition();
+    // getScrollPosition();
     if (scrollY < THRESHOLD_HIGH || scrollY === 0) {
         e.preventDefault();
         e.returnValue = '';
