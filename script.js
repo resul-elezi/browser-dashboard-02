@@ -74,6 +74,9 @@ window.addEventListener('beforeunload', e => {
 
 const browserInfo = byId('browser-info');
 const userLanguage = byId('languages');
+const userPlatform = byId('platform');
+const cookiesEnabled = byId('cookies-enabled');
+const doNotTrack = byId('do-not-track');
 
 // browserInfo.textContent = navigator.appName;
 browserInfo.textContent = navigator.appCodeName + ', ' + navigator.appVersion;
