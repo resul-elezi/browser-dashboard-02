@@ -79,8 +79,9 @@ const cookiesActive = byId('cookies-enabled');
 const doNotTrack = byId('do-not-track');
 
 // browserInfo.textContent = navigator.appName;
-browserInfo.textContent = navigator.appCodeName + ', ' + navigator.appVersion;
-userLanguages.textContent = navigator.languages;
+// browserInfo.textContent = navigator.appCodeName + ', ' + navigator.appVersion;
+browserInfo.textContent = navigator.userAgent.split(' ')[0];
+userLanguages.textContent = navigator.languages.split(' ')[0];
 userPlatform.textContent = navigator.platform;
 if(navigator.cookieEnabled) {
     cookiesActive.textContent = 'Cookies sind aktiv';
