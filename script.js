@@ -37,7 +37,6 @@ const THRESHOLD_LOW = 100;
 const THRESHOLD_HIGH = 500;
 let currentScrollY = 0;
 let currentScrollX = 0;
-console.log(currentScrollY);
 
 window.addEventListener('scroll', () => {
     currentScrollY = window.scrollY;
@@ -65,7 +64,7 @@ window.addEventListener('load', () => {
 })
 
 window.addEventListener('beforeunload', e => {
-    if (currentScrollY < THRESHOLD_HIGH || currentScrollY === 0) {
+    if (currentScrollY < THRESHOLD_HIGH) {
         e.preventDefault();
         e.returnValue = '';
     }
