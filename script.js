@@ -139,5 +139,13 @@ if (isDoNotTrackActive()) {
 
 // URL analyzer
 
-const fullUrl = byId('full-url');
-fullUrl.textContent = document.URL;
+const fullUrlOutput = byId('full-url');
+const protocolOutput = byId('protocol');
+const hostOutput = byId('hostname');
+const queryOutput = byId('query-params');
+const fullUrl = new URL(document.URL);
+
+fullUrlOutput.textContent = fullUrl;
+protocolOutput.textContent = fullUrl.protocol;
+hostOutput.textContent = fullUrl.hostname;
+hostOutput.textContent = fullUrl.hostname;
