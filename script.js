@@ -150,4 +150,3 @@ console.log(fullUrl);
 fullUrlOutput.textContent = fullUrl;
 protocolOutput.textContent = fullUrl.protocol;
 hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
-hostOutput.textContent = fullUrl.hostname;
