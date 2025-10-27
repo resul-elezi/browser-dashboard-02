@@ -145,7 +145,6 @@ const hostOutput = byId('hostname');
 const queryOutput = byId('query-params');
 // const fullUrl = new URL(window.location);
 const fullUrl = window.location;
-const gleichZeichen = '=';
 console.log(fullUrl.search.slice(1));
 
 fullUrlOutput.textContent = fullUrl;
