@@ -145,8 +145,23 @@ const hostOutput = byId('hostname');
 const queryOutput = byId('query-params');
 // const fullUrl = new URL(window.location);
 const fullUrl = window.location;
-console.log(fullUrl);
+const gleichZeichen = '=';
+console.log(fullUrl.search.slice(1));
 
 fullUrlOutput.textContent = fullUrl;
 protocolOutput.textContent = fullUrl.protocol;
 hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
+// queryOutput.textContent = `
+//   Search: ${window.location.search || "leer"}
+//   Hash: ${window.location.hash || "leer"}
+//   Path: ${window.location.pathname}
+// `;
+
+// function getParameterByName(name) {
+//     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+//     const regex = new RegExp('[\\?&]' + name + '=([^&#]*)'),
+//         results = regex.exec(location.search);
+//     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+// }
+// queryOutput.textContent = getParameterByName(name);
+
