@@ -204,3 +204,5 @@ window.addEventListener('load', () => {
 
 // ** Memory usage
 
+memoryUsage.textContent = performance.memoryUsage;
+console.log(performance.memoryUsage);
