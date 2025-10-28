@@ -191,6 +191,7 @@ updateHistBtn.addEventListener('click', () => {
 const domLoaded = byId('dom-loaded');
 const pageLoaded = byId('page-loaded');
 const memoryUsage = byId('memory-usage');
+const memoryProgress = byId('memory-progress');
 
 // ** DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -237,7 +238,7 @@ if ("performance" in window && performance.memory) {
     console.log("JS Heap Size Limit:", jsHeapSizeLimitInMB, "MB");
   
     const memoryUsagePercentage = (memoryInfo.usedJSHeapSize / memoryInfo.jsHeapSizeLimit) * 100;
-    console.log(`Memory usage: ${memoryUsagePercentage.toFixed(2)}%`);
+    memoryProgress.style.width = `${memoryUsagePercentage.toFixed(2)}%`;
   } else {
     memoryUsage.textContent = 'performance.memory API is not supported in this browser.'
   }
