@@ -102,7 +102,7 @@ if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userA
     // For Firefox, userAgentData.brands is not compatible with Firefox
     browserVersion = navigator.userAgent.split(' ')[8].slice(8);
 }
-browserInfo.textContent = browserName + ' , ' + browserVersion;
+browserInfo.textContent = browserName + ', ' + browserVersion;
 
 // ** Languages
 
@@ -145,7 +145,7 @@ const hostOutput = byId('hostname');
 const queryOutput = byId('query-params');
 // const fullUrl = new URL(window.location);
 const fullUrl = window.location;
-console.log(fullUrl.search.slice(1));
+
 
 fullUrlOutput.textContent = fullUrl;
 protocolOutput.textContent = fullUrl.protocol;
@@ -164,3 +164,13 @@ hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
 // }
 // queryOutput.textContent = getParameterByName(name);
 
+function getAllParams() {
+    // console.log(fullUrl.search.slice(1));
+    let searchParams = fullUrl.search.slice(1);
+    let replaceEquals = searchParams.replaceAll('=', ': ')
+    let splitParams = replaceEquals.split('&');
+    // let arrToString = splitParams.toString()
+    // let keysAndValues = arrToString.replaceAll();
+    console.log(splitParams);
+}
+getAllParams();
