@@ -143,9 +143,20 @@ const fullUrlOutput = byId('full-url');
 const protocolOutput = byId('protocol');
 const hostOutput = byId('hostname');
 const queryOutput = byId('query-params');
-// const fullUrl = new URL(window.location);
 const fullUrl = window.location;
+const queryParams = new URLSearchParams(window.location.search);
+const params = {};
 
+function getAllParams() {
+    for (let [key, value] of queryParams) {
+        params[key] = value;
+    }
+}
+getAllParams()
+for(let i = 0; i < params.length; i++){
+    queryOutput.textContent += params[i][i];
+}
+// queryOutput.textContent = params[];
 
 fullUrlOutput.textContent = fullUrl;
 protocolOutput.textContent = fullUrl.protocol;
@@ -171,14 +182,11 @@ hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
 //     console.log(splitParams);
 // }
 // getAllParams();
-
-const queryParams = new URLSearchParams(window.location.search);
-
 // 1. iterate over the keys
-for (let key of queryParams.keys()) {
-    console.log(key);
-}
+// for (let key of queryParams.keys()) {
+    
+// }
 // 2. iterate over the values
-for (let value of queryParams.values()) {
-    console.log(value);
-}
+// for (let value of queryParams.values()) {
+    
+// }
