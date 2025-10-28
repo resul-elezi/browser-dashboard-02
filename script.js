@@ -203,6 +203,8 @@ window.addEventListener('load', () => {
     pageLoaded.textContent = `${(performance.now() / 1000).toFixed(3)} s`;
 })
 
+// ** Performance visualization
+
 // ** Memory usage
 function updateMemoryUsage() {
     if (performance.memory) {
@@ -211,6 +213,14 @@ function updateMemoryUsage() {
         memoryProgress.style.width = `${(m.usedJSHeapSize / m.jsHeapSizeLimit) * 100}%`;
     } else {
         memoryUsage.textContent = 'performance.memory API is not supported in this browser.'
-      }
+    }
 }
 setInterval(updateMemoryUsage, 2000);
+
+if (performance.memoryUsagePercentage > 80) {
+    memoryProgress.style.background = '#f44336'; // Rot
+} else if (performance.memoryUsagePercentage > 60) {
+    memoryProgress.style.background = '#ff9800'; // Orange
+} else {
+    memoryProgress.style.background = '#4caf50'; // Grün
+}
