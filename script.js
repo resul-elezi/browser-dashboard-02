@@ -70,7 +70,7 @@ window.addEventListener('beforeunload', e => {
     }
 })
 
-// Navigator Informations
+// Navigator Information
 
 const browserInfo = byId('browser-info');
 const userLanguages = byId('languages');
@@ -190,3 +190,14 @@ updateHistBtn.addEventListener('click', () => {
 
 const domLoaded = byId('dom-loaded');
 const pageLoaded = byId('page-loaded');
+
+// ** DOM loaded
+document.addEventListener('DOMContentLoaded', () => {
+    domLoaded.textContent = 'Ja';
+})
+
+
+// ** Page loaded
+window.addEventListener('load', () => {
+    pageLoaded.textContent = 'Ja';
+})
