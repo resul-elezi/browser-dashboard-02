@@ -204,18 +204,27 @@ window.addEventListener('load', () => {
 })
 
 // ** Memory usage
-if ("performance" in window && performance.memory) {
-    const memoryInfo = performance.memory;
-    const totalJSHeapSizeInMB = (memoryInfo.totalJSHeapSize / 1000000).toFixed(3);
-    const usedJSHeapSizeInMB = (memoryInfo.usedJSHeapSize / 1000000).toFixed(3);
-    const jsHeapSizeLimitInMB = (memoryInfo.jsHeapSizeLimit / 1000000).toFixed(3);
-    memoryUsage.textContent = `Total JS Heap Size: ${totalJSHeapSizeInMB} MB, Used JS Heap Size: ${usedJSHeapSizeInMB} MB, JS Heap Size Limit: ${jsHeapSizeLimitInMB} MB`;
+function updateMemoryUsage() {
+    if (performance.memory) {
+        const m = performance.memory;
+        memoryUsage.textContent = `Used: ${(m.usedJSHeapSize / 1e6).toFixed(1)}MB / ${(m.jsHeapSizeLimit / 1e6).toFixed(1)}MB`;
+        memoryProgress.style.width = `${(m.usedJSHeapSize / m.jsHeapSizeLimit) * 100}%`;
+    } else {
+        memoryUsage.textContent = 'performance.memory API is not supported in this browser.'
+      }
+}
+
+setInterval(updateMemoryUsage, 2000);
+// if ("performance" in window && performance.memory) {
+//     const memoryInfo = performance.memory;
+//     const totalJSHeapSizeInMB = (memoryInfo.totalJSHeapSize / 1000000).toFixed(3);
+//     const usedJSHeapSizeInMB = (memoryInfo.usedJSHeapSize / 1000000).toFixed(3);
+//     const jsHeapSizeLimitInMB = (memoryInfo.jsHeapSizeLimit / 1000000).toFixed(3);
+//     memoryUsage.textContent = `Total JS Heap Size: ${totalJSHeapSizeInMB} MB, Used JS Heap Size: ${usedJSHeapSizeInMB} MB, JS Heap Size Limit: ${jsHeapSizeLimitInMB} MB`;
   
-    const memoryUsagePercentage = (memoryInfo.usedJSHeapSize / memoryInfo.jsHeapSizeLimit) * 100;
-    memoryProgress.style.width = `${memoryUsagePercentage.toFixed(2)}%`;
-  } else {
-    memoryUsage.textContent = 'performance.memory API is not supported in this browser.'
-  }
+//     const memoryUsagePercentage = (memoryInfo.usedJSHeapSize / memoryInfo.jsHeapSizeLimit) * 100;
+//     memoryProgress.style.width = `${memoryUsagePercentage.toFixed(2)}%`;
+//   } 
 
 
 // memoryUsage.textContent = performance.memoryUsage;
