@@ -205,6 +205,13 @@ window.addEventListener('load', () => {
 })
 
 // ** Performance visualization
+performanceVis.innerHTML = `
+    <div style="display: flex; height: 100%; align-items: end;">
+        <div style="background: #4CAF50; width: 30%; height: 40%" title="DOM Loading"></div>
+        <div style="background: #2196F3; width: 40%; height: 70%" title="Resources Loading"></div>
+        <div style="background: #FF9800; width: 30%; height: 100%" title="Full Load"></div>
+    </div>
+`;
 
 // ** Memory usage
 function updateMemoryUsage() {
