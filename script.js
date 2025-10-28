@@ -190,7 +190,7 @@ updateHistBtn.addEventListener('click', () => {
 
 const domLoaded = byId('dom-loaded');
 const pageLoaded = byId('page-loaded');
-
+const memoryUsage = byId('memory-usage');
 // ** DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
     domLoaded.textContent = `${performance.now() / 1000} s` ;
@@ -201,3 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     pageLoaded.textContent = `${performance.now() / 1000} s`;
 })
+
+// ** Memory usage
+
