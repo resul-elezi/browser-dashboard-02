@@ -148,15 +148,16 @@ const queryParams = new URLSearchParams(window.location.search);
 const params = {};
 
 function getAllParams() {
+    queryOutput.textContent = '';
+    const entries = [];
     for (let [key, value] of queryParams) {
         params[key] = value;
+        entries.push(`${key}: ${value}`);
     }
+    queryOutput.textContent = entries.join(', ');
 }
 getAllParams()
-for(let i = 0; i < params.length; i++){
-    queryOutput.textContent += params[i][i];
-}
-// queryOutput.textContent = params[];
+
 
 fullUrlOutput.textContent = fullUrl;
 protocolOutput.textContent = fullUrl.protocol;
