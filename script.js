@@ -175,7 +175,7 @@ const modifyUrlBtn = byId('modify-url');
 const updateHistBtn = byId('update-history');
 
 modifyUrlBtn.addEventListener('click', () => {
-    let newUrl = prompt('Bitte neu URL ändern.', fullUrl);
+    let newUrl = prompt('Bitte URL ändern.', fullUrl);
     history.replaceState('Cool', document.title, newUrl);
 });
 
