@@ -195,14 +195,12 @@ const memoryProgress = byId('memory-progress');
 
 // ** DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
-    let loadTime = performance.now() / 1000;
-    domLoaded.textContent = `${loadTime.toFixed(3)} s` ;
-})
+    domLoaded.textContent = `${(performance.now() / 1000).toFixed(3)} s`;
+});
 
 // ** Page loaded
 window.addEventListener('load', () => {
-    let loadTime = performance.now() / 1000;
-    pageLoaded.textContent = `${loadTime.toFixed(3)} s`;
+    pageLoaded.textContent = `${(performance.now() / 1000).toFixed(3)} s`;
 })
 
 // ** Memory usage
