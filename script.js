@@ -182,7 +182,11 @@ modifyUrlBtn.addEventListener('click', () => {
         newUrl
     );
 });
-
 updateHistBtn.addEventListener('click', () => {
     window.history.go(0);
 })
+
+// Performance-Tracker
+
+const domLoaded = byId('dom-loaded');
+const pageLoaded = byId('page-loaded');
