@@ -191,6 +191,7 @@ updateHistBtn.addEventListener('click', () => {
 const domLoaded = byId('dom-loaded');
 const pageLoaded = byId('page-loaded');
 const memoryUsage = byId('memory-usage');
+const performanceVis = byId('performance-visualization');
 const memoryProgress = byId('memory-progress');
 
 // ** DOM loaded
