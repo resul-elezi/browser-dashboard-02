@@ -165,12 +165,9 @@ hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
 // queryOutput.textContent = getParameterByName(name);
 
 function getAllParams() {
-    // console.log(fullUrl.search.slice(1));
     let searchParams = fullUrl.search.slice(1);
     let replaceEquals = searchParams.replaceAll('=', ': ')
     let splitParams = replaceEquals.split('&');
-    // let arrToString = splitParams.toString()
-    // let keysAndValues = arrToString.replaceAll();
     console.log(splitParams);
 }
 getAllParams();
