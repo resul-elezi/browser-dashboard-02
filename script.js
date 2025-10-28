@@ -220,9 +220,9 @@ function updateMemoryUsage() {
 setInterval(updateMemoryUsage, 2000);
 
 if (performance.memoryUsagePercentage > 80) {
-    memoryProgress.style.background = '#f44336'; // Rot
+    memoryProgress.style.background = '#f44336';
 } else if (performance.memoryUsagePercentage > 60) {
-    memoryProgress.style.background = '#ff9800'; // Orange
+    memoryProgress.style.background = '#ff9800';
 } else {
-    memoryProgress.style.background = '#4caf50'; // Grün
+    memoryProgress.style.background = '#4caf50';
 }
