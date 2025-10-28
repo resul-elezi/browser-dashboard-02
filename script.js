@@ -205,7 +205,7 @@ window.addEventListener('load', () => {
 })
 
 // ** Performance visualization
-
+// Chart mit canvas/svg
 
 // ** Memory usage
 function updateMemoryUsage() {
