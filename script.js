@@ -147,6 +147,16 @@ const fullUrl = window.location;
 const queryParams = new URLSearchParams(window.location.search);
 const params = {};
 
+// ** Full URL
+fullUrlOutput.textContent = fullUrl;
+
+// ** Protocol
+protocolOutput.textContent = fullUrl.protocol;
+
+
+hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
+
+
 function getAllParams() {
     queryOutput.textContent = '';
     const entries = [];
@@ -157,37 +167,3 @@ function getAllParams() {
     queryOutput.textContent = entries.join(', ');
 }
 getAllParams()
-
-
-fullUrlOutput.textContent = fullUrl;
-protocolOutput.textContent = fullUrl.protocol;
-hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
-// queryOutput.textContent = `
-//   Search: ${window.location.search || "leer"}
-//   Hash: ${window.location.hash || "leer"}
-//   Path: ${window.location.pathname}
-// `;
-
-// function getParameterByName(name) {
-//     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-//     const regex = new RegExp('[\\?&]' + name + '=([^&#]*)'),
-//         results = regex.exec(location.search);
-//     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-// }
-// queryOutput.textContent = getParameterByName(name);
-
-// function getAllParams() {
-//     let searchParams = fullUrl.search.slice(1);
-//     let replaceEquals = searchParams.replaceAll('=', ': ')
-//     let splitParams = replaceEquals.split('&');
-//     console.log(splitParams);
-// }
-// getAllParams();
-// 1. iterate over the keys
-// for (let key of queryParams.keys()) {
-    
-// }
-// 2. iterate over the values
-// for (let value of queryParams.values()) {
-    
-// }
