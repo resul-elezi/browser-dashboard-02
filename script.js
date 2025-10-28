@@ -172,4 +172,13 @@ hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
 // }
 // getAllParams();
 
-const queryParams = fullUrl.search;
+const queryParams = new URLSearchParams(window.location.search);
+
+// 1. iterate over the keys
+for (let key of queryParams.keys()) {
+    console.log(key);
+}
+// 2. iterate over the values
+for (let value of queryParams.values()) {
+    console.log(value);
+}
