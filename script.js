@@ -180,5 +180,5 @@ modifyUrlBtn.addEventListener('click', () => {
 });
 
 updateHistBtn.addEventListener('click', () => {
-    window.history.back(0);
+    window.history.go(0);
 })
