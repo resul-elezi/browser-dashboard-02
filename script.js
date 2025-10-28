@@ -193,16 +193,18 @@ const pageLoaded = byId('page-loaded');
 const memoryUsage = byId('memory-usage');
 // ** DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
-    domLoaded.textContent = `${performance.now() / 1000} s` ;
+    let loadTime = performance.now() / 1000;
+    domLoaded.textContent = `${loadTime.toFixed(3)} s` ;
 })
 
 
 // ** Page loaded
 window.addEventListener('load', () => {
-    pageLoaded.textContent = `${performance.now() / 1000} s`;
+    let loadTime = performance.now() / 1000;
+    pageLoaded.textContent = `${loadTime.toFixed(3)} s`;
 })
 
 // ** Memory usage
 
 memoryUsage.textContent = performance.memoryUsage;
-console.log(performance.memoryUsage);
+console.log(performance.measureUserAgentSpecificMemory())
