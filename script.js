@@ -153,9 +153,10 @@ fullUrlOutput.textContent = fullUrl;
 // ** Protocol
 protocolOutput.textContent = fullUrl.protocol;
 
-
+// ** Host and port
 hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
 
+//  ** Query parameters
 
 function getAllParams() {
     queryOutput.textContent = '';
