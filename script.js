@@ -193,11 +193,11 @@ const pageLoaded = byId('page-loaded');
 
 // ** DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
-    domLoaded.textContent = 'Ja';
+    domLoaded.textContent = `${performance.now()} ms`;
 })
 
 
 // ** Page loaded
 window.addEventListener('load', () => {
-    pageLoaded.textContent = 'Ja';
+    pageLoaded.textContent = `${performance.now()} ms`;
 })
