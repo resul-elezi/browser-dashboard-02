@@ -206,5 +206,38 @@ window.addEventListener('load', () => {
 
 // ** Memory usage
 
-memoryUsage.textContent = performance.memoryUsage;
-console.log(performance.measureUserAgentSpecificMemory())
+// memoryUsage.textContent = performance.memoryUsage;
+// console.log(performance.measureUserAgentSpecificMemory())
+
+// function runMemoryMeasurements() {
+//     const interval = -Math.log(Math.random()) * 5 * 60 * 1000;
+//     console.log(`Next measurement in ${Math.round(interval / 1000)} seconds.`);
+//     setTimeout(measureMemory, interval);
+//   }
+  
+//   async function measureMemory() {
+//     const memorySample = await performance.measureUserAgentSpecificMemory();
+//     console.log(memorySample);
+//     runMemoryMeasurements();
+//   }
+  
+//   if (crossOriginIsolated) {
+//     runMemoryMeasurements();
+//   }
+
+//   runMemoryMeasurements();
+
+if ("performance" in window && performance.memory) {
+    const memoryInfo = performance.memory;
+    const totalJSHeapSizeInMB = (memoryInfo.totalJSHeapSize / 1000000).toFixed(3);
+    const usedJSHeapSizeInMB = (memoryInfo.usedJSHeapSize / 1000000).toFixed(3);
+    const jsHeapSizeLimitInMB = (memoryInfo.jsHeapSizeLimit / 1000000).toFixed(3);
+    console.log("Total JS Heap Size:", totalJSHeapSizeInMB, "MB");
+    console.log("Used JS Heap Size:", usedJSHeapSizeInMB, "MB");
+    console.log("JS Heap Size Limit:", jsHeapSizeLimitInMB, "MB");
+  
+    const memoryUsagePercentage = (memoryInfo.usedJSHeapSize / memoryInfo.jsHeapSizeLimit) * 100;
+    console.log(`Memory usage: ${memoryUsagePercentage.toFixed(2)}%`);
+  } else {
+    memoryUsage.textContent = 'performance.memory API is not supported in this browser.'
+  }
