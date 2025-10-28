@@ -176,7 +176,11 @@ const updateHistBtn = byId('update-history');
 
 modifyUrlBtn.addEventListener('click', () => {
     let newUrl = prompt('Bitte URL ändern.', fullUrl);
-    history.replaceState('Cool', document.title, newUrl);
+    history.replaceState(
+        { source: 'dashboard', previousUrl: window.location.href },
+        document.title, 
+        newUrl
+    );
 });
 
 updateHistBtn.addEventListener('click', () => {
