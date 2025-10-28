@@ -167,4 +167,15 @@ function getAllParams() {
     }
     queryOutput.textContent = entries.join(', ');
 }
-getAllParams()
+getAllParams();
+
+// ** Modify URL
+
+const modifyUrlBtn = byId('modify-url');
+const updateHistBtn = byId('update-history');
+
+modifyUrlBtn.addEventListener('click', () => {
+    let newUrl = prompt('Bitte neu URL ändern.', fullUrl);
+    window.location.href = newUrl;
+});
+
