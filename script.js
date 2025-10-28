@@ -164,10 +164,12 @@ hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
 // }
 // queryOutput.textContent = getParameterByName(name);
 
-function getAllParams() {
-    let searchParams = fullUrl.search.slice(1);
-    let replaceEquals = searchParams.replaceAll('=', ': ')
-    let splitParams = replaceEquals.split('&');
-    console.log(splitParams);
-}
-getAllParams();
+// function getAllParams() {
+//     let searchParams = fullUrl.search.slice(1);
+//     let replaceEquals = searchParams.replaceAll('=', ': ')
+//     let splitParams = replaceEquals.split('&');
+//     console.log(splitParams);
+// }
+// getAllParams();
+
+const queryParams = fullUrl.search;
