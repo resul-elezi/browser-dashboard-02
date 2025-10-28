@@ -191,12 +191,12 @@ updateHistBtn.addEventListener('click', () => {
 const domLoaded = byId('dom-loaded');
 const pageLoaded = byId('page-loaded');
 const memoryUsage = byId('memory-usage');
+
 // ** DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
     let loadTime = performance.now() / 1000;
     domLoaded.textContent = `${loadTime.toFixed(3)} s` ;
 })
-
 
 // ** Page loaded
 window.addEventListener('load', () => {
