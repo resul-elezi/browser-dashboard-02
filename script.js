@@ -213,37 +213,4 @@ function updateMemoryUsage() {
         memoryUsage.textContent = 'performance.memory API is not supported in this browser.'
       }
 }
-
 setInterval(updateMemoryUsage, 2000);
-// if ("performance" in window && performance.memory) {
-//     const memoryInfo = performance.memory;
-//     const totalJSHeapSizeInMB = (memoryInfo.totalJSHeapSize / 1000000).toFixed(3);
-//     const usedJSHeapSizeInMB = (memoryInfo.usedJSHeapSize / 1000000).toFixed(3);
-//     const jsHeapSizeLimitInMB = (memoryInfo.jsHeapSizeLimit / 1000000).toFixed(3);
-//     memoryUsage.textContent = `Total JS Heap Size: ${totalJSHeapSizeInMB} MB, Used JS Heap Size: ${usedJSHeapSizeInMB} MB, JS Heap Size Limit: ${jsHeapSizeLimitInMB} MB`;
-  
-//     const memoryUsagePercentage = (memoryInfo.usedJSHeapSize / memoryInfo.jsHeapSizeLimit) * 100;
-//     memoryProgress.style.width = `${memoryUsagePercentage.toFixed(2)}%`;
-//   } 
-
-
-// memoryUsage.textContent = performance.memoryUsage;
-// console.log(performance.measureUserAgentSpecificMemory())
-
-// function runMemoryMeasurements() {
-//     const interval = -Math.log(Math.random()) * 5 * 60 * 1000;
-//     console.log(`Next measurement in ${Math.round(interval / 1000)} seconds.`);
-//     setTimeout(measureMemory, interval);
-//   }
-  
-//   async function measureMemory() {
-//     const memorySample = await performance.measureUserAgentSpecificMemory();
-//     console.log(memorySample);
-//     runMemoryMeasurements();
-//   }
-  
-//   if (crossOriginIsolated) {
-//     runMemoryMeasurements();
-//   }
-
-//   runMemoryMeasurements();
