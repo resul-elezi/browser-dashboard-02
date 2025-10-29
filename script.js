@@ -209,7 +209,7 @@ window.addEventListener('load', () => {
 
 const ctx = canvas.getContext('2d');
 
-ctx.fillRect(x, y, width, height);
+ctx.fillRect(10, 10, 50, 50);
 
 function resizeCanvas() {
     const container = canvas.parentElement;
