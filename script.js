@@ -191,7 +191,7 @@ updateHistBtn.addEventListener('click', () => {
 const domLoaded = byId('dom-loaded');
 const pageLoaded = byId('page-loaded');
 const memoryUsage = byId('memory-usage');
-const performanceVis = byId('performance-visualization');
+const canvas = byId('performance-visualization');
 const memoryProgress = byId('memory-progress');
 
 // ** DOM loaded
@@ -205,7 +205,11 @@ window.addEventListener('load', () => {
 })
 
 // ** Performance visualization
-// Chart mit canvas/svg
+// Chart with canvas
+
+function resizeCanvas() {
+
+}
 
 // ** Memory usage
 function updateMemoryUsage() {
