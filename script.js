@@ -208,9 +208,20 @@ window.addEventListener('load', () => {
 // Chart with canvas
 
 const ctx = canvas.getContext('2d');
-
 const xData = [0, 50, 100, 150, 200, 250, 300];
 const yData = [100, 50, 120, 70, 180, 90, 150];
+
+ctx.strokeStyle = 'blue';
+ctx.lineWidth = 2;
+ctx.lineCap = 'round';
+
+ctx.beginPath();
+ctx.moveTo(xData[0], yData[0]);
+
+for(let i = 1; i < xData.length; i++) {
+    ctx.lineTo(xData[i], yData[i]);
+}
+ctx.stroke();
 
 function resizeCanvas() {
     const container = canvas.parentElement;
