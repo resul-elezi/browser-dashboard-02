@@ -209,7 +209,8 @@ window.addEventListener('load', () => {
 
 const ctx = canvas.getContext('2d');
 
-ctx.fillRect(10, 10, 50, 50);
+const xData = [0, 50, 100, 150, 200, 250, 300];
+const yData = [100, 50, 120, 70, 180, 90, 150];
 
 function resizeCanvas() {
     const container = canvas.parentElement;
