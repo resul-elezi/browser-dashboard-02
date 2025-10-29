@@ -137,9 +137,13 @@
                 >Wird gemessen...</span
               >
             </div>
-            <div class="visualization" id="performance-visualization">
-              Performance-Visualisierung
-            </div>
+            <canvas
+              class="canvas-performance-tracker"
+              id="performance-visualization"
+              width="400"
+              height="120"
+              style="max-width: 100%; height: auto"
+            ></canvas>
             <div class="status-item">
               <span class="status-label">Memory Usage:</span>
               <span class="status-value" id="memory-usage"
