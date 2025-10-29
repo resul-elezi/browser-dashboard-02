@@ -229,7 +229,7 @@ function resizeCanvas() {
     canvas.width = container.clientWidth;
     canvas.height = 120;
 
-    drawChart()
+    // drawChart()
 }
 window.addEventListener('resize', resizeCanvas);
 
