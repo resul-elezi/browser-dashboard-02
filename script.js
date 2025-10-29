@@ -207,6 +207,10 @@ window.addEventListener('load', () => {
 // ** Performance visualization
 // Chart with canvas
 
+const ctx = canvas.getContext('2d');
+
+ctx.fillRect(x, y, width, height);
+
 function resizeCanvas() {
     const container = canvas.parentElement;
 
