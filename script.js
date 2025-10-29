@@ -208,8 +208,14 @@ window.addEventListener('load', () => {
 // Chart with canvas
 
 function resizeCanvas() {
+    const container = canvas.parentElement;
 
+    canvas.width = container.clientWidth;
+    canvas.height = 120;
+
+    drawChart()
 }
+window.addEventListener('resize', resizeCanvas);
 
 // ** Memory usage
 function updateMemoryUsage() {
