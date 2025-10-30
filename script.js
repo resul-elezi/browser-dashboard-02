@@ -226,7 +226,7 @@ function initCanvasStyles() {
 
     const ctx = getCtx();
     ctx.strokeStyle = 'blue';
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 5;
     ctx.lineCap = 'round';
     isCanvasInitialized = true;
 }
@@ -244,8 +244,9 @@ function drawChart() {
     }
     ctx.stroke();
 }
-
+drawChart();
 function resizeCanvas() {
+    initCanvasStyles();
     const canvas = getCanvas();
     const container = canvas.parentElement;
     console.log(canvas.width);
