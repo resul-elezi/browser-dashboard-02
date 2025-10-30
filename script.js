@@ -101,14 +101,7 @@ if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userA
 } else {
     // For Firefox, userAgentData.brands is not compatible with Firefox
     let lastIn = navigator.userAgent.split(' ').length - 1;
-    // console.log(lastIn);
     browserVersion = navigator.userAgent.split(' ')[lastIn].slice(8);
-    // browserVersion = lastIn.slice(8);
-    // if (navigator.userAgent.length === 9) {
-    //     browserVersion = navigator.userAgent.split(' ')[8].slice(8);
-    // } else {
-    //     browserVersion = navigator.userAgent.split(' ')[6].slice(8);
-    // }
 }
 browserInfo.textContent = browserName + ', ' + browserVersion;
 
