@@ -233,7 +233,9 @@ function initCanvasStyles() {
 
 
 function drawChart() {
-    if (!ctx) initCanvas();
+    initCanvasStyles();
+    const canvas = getCanvas();
+    const ctx = getCtx();
     ctx.beginPath();
     ctx.moveTo(xData[0], yData[0]);
 
@@ -244,7 +246,8 @@ function drawChart() {
 }
 
 function resizeCanvas() {
-    const container = initCanvas().parentElement;
+    const canvas = getCanvas();
+    const container = canvas.parentElement;
     console.log(canvas.width);
     canvas.width = container.clientWidth;
     canvas.height = 120;
