@@ -117,7 +117,6 @@ userPlatform.textContent = navigator.platform;
 
 if (navigator.cookieEnabled) {
     cookiesActive.textContent = 'Cookies sind aktiv';
-
 }
 
 // ** Do not track
@@ -158,7 +157,6 @@ protocolOutput.textContent = fullUrl.protocol;
 hostOutput.textContent = fullUrl.hostname + ':' + fullUrl.port;
 
 //  ** Query parameters
-
 function getAllParams() {
     queryOutput.textContent = '';
     const entries = [];
@@ -171,7 +169,6 @@ function getAllParams() {
 getAllParams();
 
 // ** Modify URL
-
 const modifyUrlBtn = byId('modify-url');
 const updateHistBtn = byId('update-history');
 
@@ -187,7 +184,6 @@ updateHistBtn.addEventListener('click', () => {
 })
 
 // Performance-Tracker
-
 const domLoaded = byId('dom-loaded');
 const pageLoaded = byId('page-loaded');
 const memoryUsage = byId('memory-usage');
@@ -205,7 +201,6 @@ window.addEventListener('load', () => {
 
 // ** Performance visualization
 // Chart with canvas
-
 const xData = [0, 50, 100, 150, 200, 250, 300];
 const yData = [100, 50, 120, 70, 180, 90, 150];
 
