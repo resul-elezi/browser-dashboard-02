@@ -100,7 +100,11 @@ if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userA
     browserVersion = navigator.userAgentData.brands[0].version;
 } else {
     // For Firefox, userAgentData.brands is not compatible with Firefox
-    browserVersion = navigator.userAgent.split(' ')[8].slice(8);
+    if (navigator.userAgent.length === 9) {
+        browserVersion = navigator.userAgent.split(' ')[8].slice(8);
+    } else {
+        browserVersion = navigator.userAgent.split(' ')[6].slice(8);
+    }
 }
 browserInfo.textContent = browserName + ', ' + browserVersion;
 
@@ -114,7 +118,7 @@ userPlatform.textContent = navigator.platform;
 
 // ** Cookies enabled
 
-if(navigator.cookieEnabled) {
+if (navigator.cookieEnabled) {
     cookiesActive.textContent = 'Cookies sind aktiv';
 
 }
@@ -123,14 +127,14 @@ if(navigator.cookieEnabled) {
 
 function isDoNotTrackActive() {
     if (navigator.doNotTrack === "1" || navigator.doNotTrack === "yes") {
-      return true;
+        return true;
     }
     if (navigator.msDoNotTrack === "1") {
-      return true;
+        return true;
     }
     return false;
-  }
-  
+}
+
 if (isDoNotTrackActive()) {
     doNotTrack.textContent = 'Do not track ist aktiv';
 } else {
@@ -178,8 +182,7 @@ modifyUrlBtn.addEventListener('click', () => {
     let newUrl = prompt('Bitte URL ändern.', fullUrl);
     history.replaceState(
         { source: 'dashboard', previousUrl: window.location.href },
-        document.title, 
-        newUrl
+        document.title, newUrl
     );
 });
 updateHistBtn.addEventListener('click', () => {
@@ -218,7 +221,7 @@ ctx.lineCap = 'round';
 ctx.beginPath();
 ctx.moveTo(xData[0], yData[0]);
 
-for(let i = 1; i < xData.length; i++) {
+for (let i = 1; i < xData.length; i++) {
     ctx.lineTo(xData[i], yData[i]);
 }
 ctx.stroke();
