@@ -246,7 +246,6 @@ function drawChart() {
 }
 drawChart();
 function resizeCanvas() {
-    initCanvasStyles();
     const canvas = getCanvas();
     const container = canvas.parentElement;
     console.log(canvas.width);
