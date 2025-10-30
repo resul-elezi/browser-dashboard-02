@@ -208,7 +208,6 @@ window.addEventListener('load', () => {
 
 const xData = [0, 50, 100, 150, 200, 250, 300];
 const yData = [100, 50, 120, 70, 180, 90, 150];
-let isCanvasInitialized = false;
 
 function getCanvas() {
     return byId('performance-visualization');
@@ -219,15 +218,11 @@ function getCtx() {
 }
 
 function initCanvasStyles() {
-    // if (isCanvasInitialized) return;
-
     const ctx = getCtx();
     ctx.strokeStyle = 'blue';
     ctx.lineWidth = 5;
     ctx.lineCap = 'round';
-    // isCanvasInitialized = true;
 }
-
 
 function drawChart() {
     initCanvasStyles();
@@ -250,8 +245,6 @@ function resizeCanvas() {
     canvas.width = container.clientWidth;
     canvas.height = 120;
 
-    // isCanvasInitialized = false;
-    // initCanvasStyles();
     drawChart()
 }
 window.addEventListener('resize', resizeCanvas);
