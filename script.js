@@ -222,13 +222,13 @@ function getCtx() {
 }
 
 function initCanvasStyles() {
-    if (isCanvasInitialized) return;
+    // if (isCanvasInitialized) return;
 
     const ctx = getCtx();
     ctx.strokeStyle = 'blue';
     ctx.lineWidth = 5;
     ctx.lineCap = 'round';
-    isCanvasInitialized = true;
+    // isCanvasInitialized = true;
 }
 
 
@@ -245,6 +245,7 @@ function drawChart() {
     ctx.stroke();
 }
 drawChart();
+
 function resizeCanvas() {
     const canvas = getCanvas();
     const container = canvas.parentElement;
@@ -252,6 +253,8 @@ function resizeCanvas() {
     canvas.width = container.clientWidth;
     canvas.height = 120;
 
+    // isCanvasInitialized = false;
+    // initCanvasStyles();
     drawChart()
 }
 window.addEventListener('resize', resizeCanvas);
