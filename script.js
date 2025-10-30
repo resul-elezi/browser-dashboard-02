@@ -225,11 +225,12 @@ function initCanvasStyles() {
     if (isCanvasInitialized) return;
 
     const ctx = getCtx();
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    isCanvasInitialized = true;
 }
 
-ctx.strokeStyle = 'blue';
-ctx.lineWidth = 2;
-ctx.lineCap = 'round';
 
 function drawChart() {
     if (!ctx) initCanvas();
