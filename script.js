@@ -211,15 +211,25 @@ window.addEventListener('load', () => {
 
 const xData = [0, 50, 100, 150, 200, 250, 300];
 const yData = [100, 50, 120, 70, 180, 90, 150];
-let ctx = null;
+let isCanvasInitialized = false;
 
-function initCanvas() {
-    const canvas = byId('performance-visualization');
-    ctx = canvas.getContext('2d');
-    ctx.strokeStyle = 'blue';
-    ctx.lineWidth = 2;
-    ctx.lineCap = 'round';
+function getCanvas() {
+    return byId('performance-visualization');
 }
+
+function getCtx() {
+    return getCanvas().getContext('2d');
+}
+
+function initCanvasStyles() {
+    if (isCanvasInitialized) return;
+
+    const ctx = getCtx();
+}
+
+ctx.strokeStyle = 'blue';
+ctx.lineWidth = 2;
+ctx.lineCap = 'round';
 
 function drawChart() {
     if (!ctx) initCanvas();
@@ -233,7 +243,7 @@ function drawChart() {
 }
 
 function resizeCanvas() {
-    const container = canvas.parentElement;
+    const container = initCanvas().parentElement;
     console.log(canvas.width);
     canvas.width = container.clientWidth;
     canvas.height = 120;
