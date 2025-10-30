@@ -194,7 +194,6 @@ updateHistBtn.addEventListener('click', () => {
 const domLoaded = byId('dom-loaded');
 const pageLoaded = byId('page-loaded');
 const memoryUsage = byId('memory-usage');
-const canvas = byId('performance-visualization');
 const memoryProgress = byId('memory-progress');
 
 // ** DOM loaded
@@ -210,29 +209,36 @@ window.addEventListener('load', () => {
 // ** Performance visualization
 // Chart with canvas
 
-const ctx = canvas.getContext('2d');
 const xData = [0, 50, 100, 150, 200, 250, 300];
 const yData = [100, 50, 120, 70, 180, 90, 150];
+let ctx = null;
 
-ctx.strokeStyle = 'blue';
-ctx.lineWidth = 2;
-ctx.lineCap = 'round';
-
-ctx.beginPath();
-ctx.moveTo(xData[0], yData[0]);
-
-for (let i = 1; i < xData.length; i++) {
-    ctx.lineTo(xData[i], yData[i]);
+function initCanvas() {
+    const canvas = byId('performance-visualization');
+    ctx = canvas.getContext('2d');
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
 }
-ctx.stroke();
+
+function drawChart() {
+    if (!ctx) initCanvas();
+    ctx.beginPath();
+    ctx.moveTo(xData[0], yData[0]);
+
+    for (let i = 1; i < xData.length; i++) {
+        ctx.lineTo(xData[i], yData[i]);
+    }
+    ctx.stroke();
+}
 
 function resizeCanvas() {
     const container = canvas.parentElement;
-
+    console.log(canvas.width);
     canvas.width = container.clientWidth;
     canvas.height = 120;
 
-    // drawChart()
+    drawChart()
 }
 window.addEventListener('resize', resizeCanvas);
 
