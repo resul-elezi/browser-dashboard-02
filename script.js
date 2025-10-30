@@ -100,11 +100,13 @@ if (navigator.userAgentData && navigator.userAgentData.brands && navigator.userA
     browserVersion = navigator.userAgentData.brands[0].version;
 } else {
     // For Firefox, userAgentData.brands is not compatible with Firefox
-    if (navigator.userAgent.length === 9) {
-        browserVersion = navigator.userAgent.split(' ')[8].slice(8);
-    } else {
-        browserVersion = navigator.userAgent.split(' ')[6].slice(8);
-    }
+    let lastIn = navigator.userAgent.length - 1;
+    browserVersion = navigator.userAgent.split(' ')[lastIn].slice(8);
+    // if (navigator.userAgent.length === 9) {
+    //     browserVersion = navigator.userAgent.split(' ')[8].slice(8);
+    // } else {
+    //     browserVersion = navigator.userAgent.split(' ')[6].slice(8);
+    // }
 }
 browserInfo.textContent = browserName + ', ' + browserVersion;
 
