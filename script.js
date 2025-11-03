@@ -207,6 +207,8 @@ window.addEventListener('load', () => {
 const xLine = [1, 2, 3, 4, 5, 6];
 const yLine = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+const darkSlateGray = 'red';
+
 const now = new Date();
 // log(now.getMinutes());
 // console.log(nowTime);
@@ -221,16 +223,16 @@ function getCtx() {
 
 function initCanvasStyles() {
     const ctx = getCtx();
-    ctx.strokeStyle = 'gray';
+    // ctx.strokeStyle = silver;
     ctx.lineWidth = 1;
     ctx.lineCap = 'round';
 }
 function initGridStyles() {
     const ctx = getCtx();
-    // ctx.globalAlpha = 0.25;
-    ctx.strokeStyle = '#dcdcdc';
-    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = 2;
     ctx.lineCap = 'round';
+    // ctx.stroke();
 }
 function drawGrid() {
     initGridStyles();
