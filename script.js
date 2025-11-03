@@ -204,7 +204,7 @@ window.addEventListener('load', () => {
 
 // ** Performance visualization
 // Chart with canvas
-const xLine = [0, 10, 20, 30, 40, 50, 60];
+const xLine = [10, 20, 30, 40, 50, 60];
 const yLine = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 const now = new Date();
@@ -228,14 +228,26 @@ function initCanvasStyles() {
 function drawGrid() {
     initCanvasStyles();
     const canvas = getCanvas();
-    const container = canvas.parentElement;
-    canvas.width = container.clientWidth;
+    // const container = canvas.parentElement;
+    // const containerWidth = container.clientWidth;
+    // const canvasWidth = containerWidth;
+    const canvasWidth = canvas.width;
+    const canvasToTenMins = canvasWidth / xLine.length;
+    // log(containerWidth);
+    // log(canvasWidth);
+    // log(xLine);
+    // log(canvasToTenMins);
     const ctx = getCtx();
 
     ctx.beginPath();
-
+    ctx.moveTo(canvasToTenMins, 0);
+    ctx.lineTo(canvasToTenMins, 120);
+    ctx.moveTo(canvasToTenMins * 2, 0);
+    ctx.lineTo(canvasToTenMins * 2, 120);
     ctx.stroke();
 }
+drawGrid();
+
 function drawChart() {
     initCanvasStyles();
     const canvas = getCanvas();
@@ -253,7 +265,7 @@ function resizeCanvas() {
     const container = canvas.parentElement;
     canvas.width = container.clientWidth;
     canvas.height = 120;
-
+    drawGrid();
     drawChart()
 }
 window.addEventListener('resize', resizeCanvas);
