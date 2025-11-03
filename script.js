@@ -240,6 +240,7 @@ function drawGrid() {
     const canvasWidth = canvas.width;
     canvas.height = 120;
     const tenMins = canvasWidth / xLine.length;
+    const tenPersent = canvas.height / yLine.length;
     // log(containerWidth);
     // log(canvasWidth);
     // log(xLine);
