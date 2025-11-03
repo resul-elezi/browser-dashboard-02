@@ -204,8 +204,8 @@ window.addEventListener('load', () => {
 
 // ** Performance visualization
 // Chart with canvas
-// const xTime = [0, 50, 100, 150, 200, 250, 300];
-// const yMem = [100, 50, 120, 70, 180, 90, 150];
+const xLine = [0, 50, 100, 150, 200, 250, 300];
+const yLine = [100, 50, 120, 70, 180, 90, 150];
 
 const now = new Date();
 log(now.getMinutes());
