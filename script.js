@@ -204,7 +204,7 @@ window.addEventListener('load', () => {
 
 // ** Performance visualization
 // Chart with canvas
-const xLine = [0, 1, 2, 3, 4, 5, 6];
+const xLine = [1, 2, 3, 4, 5, 6];
 const yLine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const now = new Date();
@@ -240,10 +240,14 @@ function drawGrid() {
     const ctx = getCtx();
 
     ctx.beginPath();
-    ctx.moveTo(canvasToTenMins, 0);
-    ctx.lineTo(canvasToTenMins, 120);
-    ctx.moveTo(canvasToTenMins * 2, 0);
-    ctx.lineTo(canvasToTenMins * 2, 120);
+    for (let i = 0; i <= xLine.length; i++) {
+        ctx.moveTo(canvasToTenMins * i, 0);
+        ctx.lineTo(canvasToTenMins * i, 120);
+    }
+    // ctx.moveTo(canvasToTenMins, 0);
+    // ctx.lineTo(canvasToTenMins, 120);
+    // ctx.moveTo(canvasToTenMins * 2, 0);
+    // ctx.lineTo(canvasToTenMins * 2, 120);
     ctx.stroke();
 }
 drawGrid();
