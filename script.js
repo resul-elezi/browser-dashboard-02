@@ -246,7 +246,7 @@ function drawGrid() {
         ctx.lineTo(tenMins * x, canvas.height);
     }
 
-    for (let y = 0; y < yLine.length; y++) {
+    for (let y = 0; y <= yLine.length; y++) {
         ctx.moveTo(0, tenPercent * y);
         ctx.lineTo(canvasWidth, tenPercent * y)
     }
