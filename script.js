@@ -204,7 +204,7 @@ window.addEventListener('load', () => {
 
 // ** Performance visualization
 // Chart with canvas
-const xLine = [10, 20, 30, 40, 50, 60];
+const xLine = [0, 10, 20, 30, 40, 50, 60];
 const yLine = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 const now = new Date();
@@ -222,7 +222,7 @@ function getCtx() {
 function initCanvasStyles() {
     const ctx = getCtx();
     ctx.strokeStyle = 'blue';
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 1;
     ctx.lineCap = 'round';
 }
 
@@ -231,9 +231,10 @@ function drawChart() {
     const canvas = getCanvas();
     const ctx = getCtx();
     ctx.beginPath();
-
-    // for (let i = 1; i < xData.length; i++) {
-    //     ctx.lineTo(xData[i], yData[i]);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, 120)
+    // for (let i = 1; i < xLine.length; i++) {
+    //     ctx.lineTo(xLine[i], yLine[i]);
     // }
     ctx.stroke();
 }
