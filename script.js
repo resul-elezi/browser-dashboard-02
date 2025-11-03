@@ -208,7 +208,7 @@ const xLine = [1, 2, 3, 4, 5, 6];
 const yLine = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const now = new Date();
-log(now.getMinutes());
+// log(now.getMinutes());
 // console.log(nowTime);
 
 function getCanvas() {
@@ -259,9 +259,6 @@ function drawChart() {
     const canvas = getCanvas();
     const ctx = getCtx();
     ctx.beginPath();
-    // for (let i = 1; i < xLine.length; i++) {
-    //     ctx.lineTo(xLine[i], yLine[i]);
-    // }
     ctx.stroke();
 }
 drawChart();
