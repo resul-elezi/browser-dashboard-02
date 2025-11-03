@@ -225,14 +225,22 @@ function initCanvasStyles() {
     ctx.lineWidth = 1;
     ctx.lineCap = 'round';
 }
+function drawGrid() {
+    initCanvasStyles();
+    const canvas = getCanvas();
+    const container = canvas.parentElement;
+    canvas.width = container.clientWidth;
+    const ctx = getCtx();
 
+    ctx.beginPath();
+
+    ctx.stroke();
+}
 function drawChart() {
     initCanvasStyles();
     const canvas = getCanvas();
     const ctx = getCtx();
     ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(0, 120)
     // for (let i = 1; i < xLine.length; i++) {
     //     ctx.lineTo(xLine[i], yLine[i]);
     // }
