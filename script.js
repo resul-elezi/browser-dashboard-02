@@ -1,9 +1,12 @@
 'use strict';
 
 // Define short aliases
-const byId = (id) => document.getElementById(id);
-const $ = (selector) => document.querySelector(selector);
-const $$ = (selector) => document.querySelectorAll(selector);
+window.byId = (id) => document.getElementById(id);
+window.$ = (selector) => document.querySelector(selector);
+window.$$ = (selector) => document.querySelectorAll(selector);
+window.log = console.log;
+
+
 
 // use case
 // const element = $('#myId');
@@ -236,7 +239,6 @@ drawChart();
 function resizeCanvas() {
     const canvas = getCanvas();
     const container = canvas.parentElement;
-    console.log(canvas.width);
     canvas.width = container.clientWidth;
     canvas.height = 120;
 
