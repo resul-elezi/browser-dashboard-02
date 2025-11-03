@@ -240,7 +240,7 @@ function drawGrid() {
     const canvasWidth = canvas.width;
     canvas.height = 120;
     const tenMins = canvasWidth / xLine.length;
-    const tenPersent = canvas.height / yLine.length;
+    const tenPercent = canvas.height / yLine.length;
     // log(containerWidth);
     // log(canvasWidth);
     // log(xLine);
@@ -252,11 +252,12 @@ function drawGrid() {
         ctx.moveTo(tenMins * x, 0);
         ctx.lineTo(tenMins * x, 120);
     }
-    for (let y = 0; y <= yLine.length; y++) {
-        ctx.moveTo(0, yLine * y);
-        ctx.lineTo(canvasWidth, yLine * y)
-        log(canvasWidth)
-    }
+
+    // for (let y = 0; y <= yLine.length; y++) {
+    //     ctx.moveTo(0, yLine * y);
+    //     ctx.lineTo(canvasWidth, yLine * y)
+    //     log(canvasWidth)
+    // }
     // ctx.moveTo(tenMins, 0);
     // ctx.lineTo(tenMins, 120);
     // ctx.moveTo(tenMins * 2, 0);
