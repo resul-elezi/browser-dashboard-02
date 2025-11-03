@@ -225,14 +225,21 @@ function initCanvasStyles() {
     ctx.lineWidth = 1;
     ctx.lineCap = 'round';
 }
+function initGridStyles() {
+    const ctx = getCtx();
+    ctx.strokeStyle = 'gray';
+    ctx.lineWidth = 1;
+    ctx.lineCap = 'round';
+}
 function drawGrid() {
-    initCanvasStyles();
+    initGridStyles();
     const canvas = getCanvas();
     // const container = canvas.parentElement;
     // const containerWidth = container.clientWidth;
     // const canvasWidth = containerWidth;
     const canvasWidth = canvas.width;
-    const canvasToTenMins = canvasWidth / xLine.length;
+    canvas.height = 120;
+    const tenMins = canvasWidth / xLine.length;
     // log(containerWidth);
     // log(canvasWidth);
     // log(xLine);
@@ -240,14 +247,19 @@ function drawGrid() {
     const ctx = getCtx();
 
     ctx.beginPath();
-    for (let i = 0; i <= xLine.length; i++) {
-        ctx.moveTo(canvasToTenMins * i, 0);
-        ctx.lineTo(canvasToTenMins * i, 120);
+    for (let x = 0; x <= xLine.length; x++) {
+        ctx.moveTo(tenMins * x, 0);
+        ctx.lineTo(tenMins * x, 120);
     }
-    // ctx.moveTo(canvasToTenMins, 0);
-    // ctx.lineTo(canvasToTenMins, 120);
-    // ctx.moveTo(canvasToTenMins * 2, 0);
-    // ctx.lineTo(canvasToTenMins * 2, 120);
+    for (let y = 0; y <= yLine.length; y++) {
+        ctx.moveTo(0, yLine * y);
+        ctx.lineTo(canvasWidth, yLine * y)
+        log(canvasWidth)
+    }
+    // ctx.moveTo(tenMins, 0);
+    // ctx.lineTo(tenMins, 120);
+    // ctx.moveTo(tenMins * 2, 0);
+    // ctx.lineTo(tenMins * 2, 120);
     ctx.stroke();
 }
 drawGrid();
