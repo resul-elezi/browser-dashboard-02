@@ -234,17 +234,10 @@ function initGridStyles() {
 function drawGrid() {
     initGridStyles();
     const canvas = getCanvas();
-    // const container = canvas.parentElement;
-    // const containerWidth = container.clientWidth;
-    // const canvasWidth = containerWidth;
     const canvasWidth = canvas.width;
     canvas.height = 120;
     const tenMins = canvasWidth / xLine.length;
     const tenPercent = canvas.height / yLine.length;
-    // log(containerWidth);
-    // log(canvasWidth);
-    // log(xLine);
-    // log(canvasToTenMins);
     const ctx = getCtx();
 
     ctx.beginPath();
@@ -252,16 +245,10 @@ function drawGrid() {
         ctx.moveTo(tenMins * x, 0);
         ctx.lineTo(tenMins * x, canvas.height);
     }
-    // ctx.moveTo(0, 0);
-    // ctx.lineTo(canvasWidth, 0);
-    // ctx.moveTo(0, 12);
-    // ctx.lineTo(canvasWidth, 12);
-    // ctx.moveTo(0, 24);
-    // ctx.lineTo(canvasWidth, 24);
+
     for (let y = 0; y < yLine.length; y++) {
         ctx.moveTo(0, tenPercent * y);
         ctx.lineTo(canvasWidth, tenPercent * y)
-        // log(canvasWidth)
     }
     ctx.stroke();
 }
