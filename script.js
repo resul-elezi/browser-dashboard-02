@@ -208,7 +208,7 @@ const xData = [0, 50, 100, 150, 200, 250, 300];
 const yData = [100, 50, 120, 70, 180, 90, 150];
 
 const nowTime = new Date();
-log(nowTime);
+log(nowTime.getMinutes());
 // console.log(nowTime);
 
 function getCanvas() {
