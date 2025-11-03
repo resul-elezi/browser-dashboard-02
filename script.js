@@ -221,7 +221,7 @@ function getCtx() {
 
 function initCanvasStyles() {
     const ctx = getCtx();
-    ctx.strokeStyle = 'blue';
+    ctx.strokeStyle = 'gray';
     ctx.lineWidth = 1;
     ctx.lineCap = 'round';
 }
