@@ -204,11 +204,11 @@ window.addEventListener('load', () => {
 
 // ** Performance visualization
 // Chart with canvas
-const xData = [0, 50, 100, 150, 200, 250, 300];
-const yData = [100, 50, 120, 70, 180, 90, 150];
+// const xTime = [0, 50, 100, 150, 200, 250, 300];
+// const yMem = [100, 50, 120, 70, 180, 90, 150];
 
-const nowTime = new Date();
-log(nowTime.getMinutes());
+const now = new Date();
+log(now.getMinutes());
 // console.log(nowTime);
 
 function getCanvas() {
@@ -231,11 +231,11 @@ function drawChart() {
     const canvas = getCanvas();
     const ctx = getCtx();
     ctx.beginPath();
-    ctx.moveTo(xData[0], yData[0]);
+    ctx.moveTo(now.getMinutes(), 10);
 
-    for (let i = 1; i < xData.length; i++) {
-        ctx.lineTo(xData[i], yData[i]);
-    }
+    // for (let i = 1; i < xData.length; i++) {
+    //     ctx.lineTo(xData[i], yData[i]);
+    // }
     ctx.stroke();
 }
 drawChart();
