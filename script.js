@@ -227,8 +227,9 @@ function initCanvasStyles() {
 }
 function initGridStyles() {
     const ctx = getCtx();
-    ctx.strokeStyle = 'gray';
-    ctx.lineWidth = .5;
+    // ctx.globalAlpha = 0.25;
+    ctx.strokeStyle = '#dcdcdc';
+    ctx.lineWidth = 1;
     ctx.lineCap = 'round';
 }
 function drawGrid() {
