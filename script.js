@@ -66,12 +66,12 @@ window.addEventListener('load', () => {
     pageStatus.textContent = 'Webseite vollständig geladen';
 })
 
-window.addEventListener('beforeunload', e => {
-    if (currentScrollY < THRESHOLD_HIGH) {
-        e.preventDefault();
-        e.returnValue = '';
-    }
-})
+// window.addEventListener('beforeunload', e => {
+//     if (currentScrollY < THRESHOLD_HIGH) {
+//         e.preventDefault();
+//         e.returnValue = '';
+//     }
+// })
 
 // Navigator Information
 
@@ -206,6 +206,10 @@ window.addEventListener('load', () => {
 // Chart with canvas
 const xData = [0, 50, 100, 150, 200, 250, 300];
 const yData = [100, 50, 120, 70, 180, 90, 150];
+
+const nowTime = new Date();
+log(nowTime);
+// console.log(nowTime);
 
 function getCanvas() {
     return byId('performance-visualization');
