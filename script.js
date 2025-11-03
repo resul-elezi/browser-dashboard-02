@@ -204,8 +204,8 @@ window.addEventListener('load', () => {
 
 // ** Performance visualization
 // Chart with canvas
-const xLine = [0, 50, 100, 150, 200, 250, 300];
-const yLine = [100, 50, 120, 70, 180, 90, 150];
+const xLine = [10, 20, 30, 40, 50, 60];
+const yLine = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 const now = new Date();
 log(now.getMinutes());
@@ -231,7 +231,6 @@ function drawChart() {
     const canvas = getCanvas();
     const ctx = getCtx();
     ctx.beginPath();
-    ctx.moveTo(now.getMinutes(), 10);
 
     // for (let i = 1; i < xData.length; i++) {
     //     ctx.lineTo(xData[i], yData[i]);
