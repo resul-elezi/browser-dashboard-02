@@ -248,10 +248,10 @@ function drawGrid() {
     const ctx = getCtx();
 
     ctx.beginPath();
-    // for (let x = 0; x <= xLine.length; x++) {
-    //     ctx.moveTo(tenMins * x, 0);
-    //     ctx.lineTo(tenMins * x, 120);
-    // }
+    for (let x = 0; x <= xLine.length; x++) {
+        ctx.moveTo(tenMins * x, 0);
+        ctx.lineTo(tenMins * x, canvas.height);
+    }
     // ctx.moveTo(0, 0);
     // ctx.lineTo(canvasWidth, 0);
     // ctx.moveTo(0, 12);
