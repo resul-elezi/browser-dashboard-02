@@ -228,13 +228,12 @@ function initGridStyles() {
     ctx.lineCap = 'round';
 }
 function drawGrid() {
+    initGridStyles();
     const canvas = getCanvas();
     const canvasWidth = canvas.width;
-    canvas.height = 120;
     const tenMins = canvasWidth / xLine.length;
     const tenPercent = canvas.height / yLine.length;
     const ctx = getCtx();
-    initGridStyles();
 
     ctx.beginPath();
     for (let x = 0; x <= xLine.length; x++) {

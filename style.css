@@ -124,9 +124,12 @@ h1 {
     border: 1px dashed #ddd;
     color: #888;
 }
-/* .canvas-performance-tracker {
-    border: 1px solid #ddd;
-} */
+
+.canvas-div {
+    height: 150px;
+    padding: 1rem;
+}
+
 /* Button Styles */
 .btn {
     background: #2a5298;
