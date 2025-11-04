@@ -130,6 +130,12 @@ h1 {
     padding: 1rem;
 }
 
+.memory-title {
+    writing-mode: vertical-lr;
+    /* transform: rotate(180deg); */
+    rotate: 180deg;
+}
+
 /* Button Styles */
 .btn {
     background: #2a5298;
