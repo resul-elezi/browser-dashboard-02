@@ -136,6 +136,10 @@ h1 {
     rotate: 180deg;
 }
 
+.time-title {
+    display: block;
+}
+
 /* Button Styles */
 .btn {
     background: #2a5298;
