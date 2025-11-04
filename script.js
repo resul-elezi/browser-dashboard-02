@@ -223,7 +223,7 @@ function initCanvasStyles() {
 }
 function initGridStyles() {
     const ctx = getCtx();
-    ctx.strokeStyle = 'rgba(0,0,0, .25)';
+    ctx.strokeStyle = 'rgba(0,0,0, .2)';
     ctx.lineWidth = 1;
     ctx.lineCap = 'round';
 }
