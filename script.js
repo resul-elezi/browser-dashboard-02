@@ -207,7 +207,7 @@ window.addEventListener('load', () => {
 const xLine = [1, 2, 3, 4, 5, 6];
 const yLine = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const darkSlateGray = 'red';
+// const darkSlateGray = 'red';
 
 const now = new Date();
 // log(now.getMinutes());
@@ -221,12 +221,12 @@ function getCtx() {
     return getCanvas().getContext('2d');
 }
 
-function initCanvasStyles() {
-    const ctx = getCtx();
-    // ctx.strokeStyle = silver;
-    ctx.lineWidth = 1;
-    ctx.lineCap = 'round';
-}
+// function initCanvasStyles() {
+//     const ctx = getCtx();
+//     ctx.strokeStyle = silver;
+//     ctx.lineWidth = 1;
+//     ctx.lineCap = 'round';
+// }
 function initGridStyles() {
     const ctx = getCtx();
     ctx.strokeStyle = 'blue';
