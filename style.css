@@ -126,18 +126,26 @@ h1 {
 }
 
 .canvas-div {
+    display: flex;
+    flex-flow: row wrap;
     height: 150px;
     padding: 1rem;
 }
 
+.canvas-performance-tracker {
+    flex: 1;
+}
+
 .memory-title {
-    writing-mode: vertical-lr;
+    /* flex: 2; */
+    /* writing-mode: vertical-lr; */
     /* transform: rotate(180deg); */
-    rotate: 180deg;
+    /* rotate: 180deg; */
 }
 
 .time-title {
-    display: block;
+    /* display: inline-block; */
+    /* flex: 2; */
 }
 
 /* Button Styles */
