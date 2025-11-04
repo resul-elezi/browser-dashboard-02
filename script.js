@@ -221,18 +221,17 @@ function getCtx() {
     return getCanvas().getContext('2d');
 }
 
-// function initCanvasStyles() {
-//     const ctx = getCtx();
-//     ctx.strokeStyle = silver;
-//     ctx.lineWidth = 1;
-//     ctx.lineCap = 'round';
-// }
+function initCanvasStyles() {
+    const ctx = getCtx();
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 1;
+    ctx.lineCap = 'round';
+}
 function initGridStyles() {
     const ctx = getCtx();
     ctx.strokeStyle = 'blue';
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
-    // ctx.stroke();
 }
 function drawGrid() {
     initGridStyles();
@@ -262,6 +261,8 @@ function drawChart() {
     const canvas = getCanvas();
     const ctx = getCtx();
     ctx.beginPath();
+    ctx.moveTo(0, 75);
+    ctx.lineTo(70, 95);
     ctx.stroke();
 }
 drawChart();
