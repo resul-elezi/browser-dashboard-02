@@ -215,26 +215,26 @@ function getCtx() {
     return getCanvas().getContext('2d');
 }
 
-// function initCanvasStyles() {
-//     const ctx = getCtx();
-//     ctx.strokeStyle = 'red';
-//     ctx.lineWidth = 1;
-//     ctx.lineCap = 'round';
-// }
+function initCanvasStyles() {
+    const ctx = getCtx();
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 1;
+    ctx.lineCap = 'round';
+}
 function initGridStyles() {
     const ctx = getCtx();
-    ctx.strokeStyle = 'blue';
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'rgba(0,0,0, .25)';
+    ctx.lineWidth = 1;
     ctx.lineCap = 'round';
 }
 function drawGrid() {
-    initGridStyles();
     const canvas = getCanvas();
     const canvasWidth = canvas.width;
     canvas.height = 120;
     const tenMins = canvasWidth / xLine.length;
     const tenPercent = canvas.height / yLine.length;
     const ctx = getCtx();
+    initGridStyles();
 
     ctx.beginPath();
     for (let x = 0; x <= xLine.length; x++) {
@@ -250,16 +250,16 @@ function drawGrid() {
 }
 drawGrid();
 
-// function drawChart() {
-//     initCanvasStyles();
-//     const canvas = getCanvas();
-//     const ctx = getCtx();
-//     ctx.beginPath();
-//     ctx.moveTo(0, 75);
-//     ctx.lineTo(70, 95);
-//     ctx.stroke();
-// }
-// drawChart();
+function drawChart() {
+    initCanvasStyles();
+    const canvas = getCanvas();
+    const ctx = getCtx();
+    ctx.beginPath();
+    ctx.moveTo(0, 75);
+    ctx.lineTo(70, 95);
+    ctx.stroke();
+}
+drawChart();
 
 function resizeCanvas() {
     const canvas = getCanvas();
@@ -267,7 +267,7 @@ function resizeCanvas() {
     canvas.width = container.clientWidth;
     canvas.height = 120;
     drawGrid();
-    // drawChart();
+    drawChart();
 }
 window.addEventListener('resize', resizeCanvas);
 
