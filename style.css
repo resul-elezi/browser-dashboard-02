@@ -125,21 +125,61 @@ h1 {
     color: #888;
 }
 
-.canvas-div {
+/* .canvas-div {
     height: 150px;
     padding: 1rem;
-}
+} */
 
-.canvas-performance-tracker {
-    /* flex: 1; */
-}
+/* .canvas-performance-tracker {}
 
 .memory-title {
     writing-mode: vertical-lr;
     rotate: 180deg;
 }
 
-.time-title {}
+.time-title {} */
+
+.visualization {
+    height: 120px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #ddd;
+    color: #888;
+}
+
+.canvas-div {
+    height: 9.375rem;
+    padding: 1rem 1rem .25rem .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas-row {
+    display: flex;
+    /* Memory + Canvas nebeneinander */
+    align-items: center;
+    justify-content: center;
+}
+
+.memory-title {
+    font-size: .625rem;
+    writing-mode: vertical-lr;
+    rotate: 180deg;
+    margin-right: .125rem;
+}
+
+.time-title {
+    font-size: .625rem;
+    margin-top: .125rem;
+    text-align: center;
+}
+
+
+
 
 /* Button Styles */
 .btn {
