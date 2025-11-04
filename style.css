@@ -125,34 +125,8 @@ h1 {
     color: #888;
 }
 
-/* .canvas-div {
-    height: 150px;
-    padding: 1rem;
-} */
-
-/* .canvas-performance-tracker {}
-
-.memory-title {
-    writing-mode: vertical-lr;
-    rotate: 180deg;
-}
-
-.time-title {} */
-
-.visualization {
-    height: 120px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px dashed #ddd;
-    color: #888;
-}
-
 .canvas-div {
-    height: 9.375rem;
+    height: 10rem;
     padding: 1rem 1rem .25rem .5rem;
     display: flex;
     flex-direction: column;
