@@ -253,9 +253,10 @@ function drawChart() {
     initCanvasStyles();
     const canvas = getCanvas();
     const ctx = getCtx();
+    const memoryInPercent = performance.memoryUsagePercentage;
     ctx.beginPath();
     ctx.moveTo(0, 75);
-    ctx.lineTo(70, 95);
+    ctx.lineTo(memoryInPercent / canvas.height, 95);
     ctx.stroke();
 }
 drawChart();
