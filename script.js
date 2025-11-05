@@ -252,17 +252,19 @@ drawGrid();
 function drawChart() {
     initCanvasStyles();
     const canvas = getCanvas();
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
     const ctx = getCtx();
     const now = new Date();
     const mins = now.getMinutes();
     const m = performance.memory;
     const memInPercent = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
     ctx.beginPath();
-    ctx.moveTo(memInPercent, mins);
-    ctx.lineTo(memInPercent / mins, mins);
+    ctx.moveTo((canvasHeight / memInPercent) * 10, canvasWidth / mins);
+    ctx.lineTo((canvasHeight / memInPercent) * 10, canvasWidth / mins);
     ctx.stroke();
 }
-drawChart();
+setInterval(drawChart, 500)
 
 function resizeCanvas() {
     const canvas = getCanvas();
