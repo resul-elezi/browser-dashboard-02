@@ -278,18 +278,18 @@ function updateMemoryUsage() {
         const m = performance.memory;
         const memoryUsagePercentage = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
 
+        // const fakeUsagePercentage = 90;
+        // const memoryUsagePercentage = fakeUsagePercentage;
+
         memoryUsage.textContent = `Used: ${(m.usedJSHeapSize / 1e6).toFixed(1)}MB / ${(m.jsHeapSizeLimit / 1e6).toFixed(1)}MB`;
         memoryProgress.style.width = `${memoryUsagePercentage}%`;
 
         if (memoryUsagePercentage > 80) {
             memoryProgress.style.background = '#f44336';
-            log(memoryUsagePercentage);
         } else if (memoryUsagePercentage > 60) {
             memoryProgress.style.background = '#ff9800';
-            log(memoryUsagePercentage);
         } else {
             memoryProgress.style.background = '#4caf50';
-            log(memoryUsagePercentage);
         }
     } else {
         memoryUsage.textContent = 'performance.memory API is not supported in this browser.';
