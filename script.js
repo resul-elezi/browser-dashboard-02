@@ -219,7 +219,7 @@ function getCtx() {
 function initCanvasStyles() {
     const ctx = getCtx();
     ctx.strokeStyle = 'red';
-    ctx.lineWidth = .25;
+    ctx.lineWidth = .5;
     ctx.lineCap = 'round';
 }
 function initGridStyles() {
@@ -262,21 +262,18 @@ function drawChart() {
     const m = performance.memory;
     const memInPercent = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
     const fakePercent = memInPercent * 1000;
-    // const percentInHeight = ((canvasHeight / fakePercent) * 10).toFixed(2);
     const percentInHeight = canvasHeight - ((canvasHeight / fakePercent) * 10).toFixed(2);
-    // const minsInWidth = (canvasWidth / 60) * mins;
-    const totalSecs = mins * 60 + secs;
-    const secsInWidth = (canvasWidth / 3600) * totalSecs;
+    const minsInWidth = (canvasWidth / 60) * mins;
+    // const totalSecs = mins * 60 + secs;
+    // const secsInWidth = (canvasWidth / 3600) * totalSecs;
 
     if (!ctx.currentPath) {
         ctx.beginPath();
-        ctx.moveTo(secsInWidth, percentInHeight);
+        ctx.moveTo(minsInWidth, percentInHeight);
         ctx.currentPath = true;
     } else {
-        ctx.lineTo(secsInWidth, percentInHeight)
+        ctx.lineTo(minsInWidth, percentInHeight)
     }
-    // ctx.beginPath();
-    // ctx.lineTo(secsInWidth, percentInHeight);
     ctx.stroke();
 }
 setInterval(drawChart, 1000)
