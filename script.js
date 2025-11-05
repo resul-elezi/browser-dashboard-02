@@ -257,15 +257,21 @@ function drawChart() {
     const ctx = getCtx();
     const now = new Date();
     const mins = now.getMinutes();
+    const secs = now.getSeconds();
     const m = performance.memory;
     const memInPercent = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
-    // log(memInPercent);
+    const fakePercent = memInPercent * 1000;
+    const percentInHeight = ((canvasHeight / fakePercent) * 10).toFixed(2);
+    const minsInWidth = (canvasWidth / 60) * mins;
+    const secsInWidth = canvasWidth / ((minsInWidth * 60) + secs);
+    log(secsInWidth);
+    log(minsInWidth);
     ctx.beginPath();
-    ctx.moveTo((canvasHeight / memInPercent) * 10, canvasWidth / mins);
-    ctx.lineTo((canvasHeight / memInPercent) * 10, canvasWidth / mins);
+    ctx.moveTo(percentInHeight, canvasWidth / mins);
+    ctx.lineTo(percentInHeight, canvasWidth / mins);
     ctx.stroke();
 }
-setInterval(drawChart, 500)
+setInterval(drawChart, 1000)
 
 function resizeCanvas() {
     const canvas = getCanvas();
