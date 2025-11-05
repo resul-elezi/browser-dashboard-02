@@ -254,10 +254,10 @@ function drawChart() {
     const canvas = getCanvas();
     const ctx = getCtx();
     const m = performance.memory;
-    const memoryUsagePercentage = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
+    const memInPercent = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
     ctx.beginPath();
     ctx.moveTo(0, 75);
-    ctx.lineTo(memoryUsagePercentage / canvas.height, 95);
+    ctx.lineTo(memInPercent / canvas.height, 95);
     ctx.stroke();
 }
 drawChart();
@@ -276,17 +276,17 @@ window.addEventListener('resize', resizeCanvas);
 function updateMemoryUsage() {
     if (performance.memory) {
         const m = performance.memory;
-        const memoryUsagePercentage = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
+        const memInPercent = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
 
         // const fakeUsagePercentage = 90;
-        // const memoryUsagePercentage = fakeUsagePercentage;
+        // const memInPercent = fakeUsagePercentage;
 
         memoryUsage.textContent = `Used: ${(m.usedJSHeapSize / 1e6).toFixed(1)}MB / ${(m.jsHeapSizeLimit / 1e6).toFixed(1)}MB`;
-        memoryProgress.style.width = `${memoryUsagePercentage}%`;
+        memoryProgress.style.width = `${memInPercent}%`;
 
-        if (memoryUsagePercentage > 80) {
+        if (memInPercent > 80) {
             memoryProgress.style.background = '#f44336';
-        } else if (memoryUsagePercentage > 60) {
+        } else if (memInPercent > 60) {
             memoryProgress.style.background = '#ff9800';
         } else {
             memoryProgress.style.background = '#4caf50';
