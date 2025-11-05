@@ -253,6 +253,8 @@ function drawChart() {
     initCanvasStyles();
     const canvas = getCanvas();
     const ctx = getCtx();
+    const now = new Date();
+    const mins = now.getMinutes();
     const m = performance.memory;
     const memInPercent = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
     ctx.beginPath();
