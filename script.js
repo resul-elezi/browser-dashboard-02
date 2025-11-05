@@ -254,6 +254,7 @@ function drawChart() {
     const canvas = getCanvas();
     const ctx = getCtx();
     const memoryInPercent = performance.memoryUsagePercentage;
+    log(performance.memory);
     ctx.beginPath();
     ctx.moveTo(0, 75);
     ctx.lineTo(memoryInPercent / canvas.height, 95);
@@ -273,20 +274,35 @@ window.addEventListener('resize', resizeCanvas);
 
 // ** Memory usage
 function updateMemoryUsage() {
+    const m = performance.memory;
+    const memoryUsagePercentage = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
+    memoryUsage.textContent = `Used: ${(m.usedJSHeapSize / 1e6).toFixed(1)}MB / ${(m.jsHeapSizeLimit / 1e6).toFixed(1)}MB`;
     if (performance.memory) {
-        const m = performance.memory;
-        memoryUsage.textContent = `Used: ${(m.usedJSHeapSize / 1e6).toFixed(1)}MB / ${(m.jsHeapSizeLimit / 1e6).toFixed(1)}MB`;
-        memoryProgress.style.width = `${(m.usedJSHeapSize / m.jsHeapSizeLimit) * 100}%`;
+        memoryProgress.style.width = `${memoryUsagePercentage}%`;
     } else {
         memoryUsage.textContent = 'performance.memory API is not supported in this browser.'
+    }
+    if (memoryUsagePercentage > 80) {
+        memoryProgress.style.background = '#f44336';
+        log(memoryUsagePercentage)
+    } else if (memoryUsagePercentage > 60) {
+        memoryProgress.style.background = '#ff9800';
+        log(memoryUsagePercentage)
+    } else {
+        memoryProgress.style.background = '#4caf50';
+        log(memoryUsagePercentage);
     }
 }
 setInterval(updateMemoryUsage, 2000);
 
-if (performance.memoryUsagePercentage > 80) {
-    memoryProgress.style.background = '#f44336';
-} else if (performance.memoryUsagePercentage > 60) {
-    memoryProgress.style.background = '#ff9800';
-} else {
-    memoryProgress.style.background = '#4caf50';
-}
+// if (performance.memoryUsagePercentage > 80) {
+//     memoryProgress.style.background = '#f44336';
+//     log(performance.memoryUsagePercentage)
+// } else if (performance.memoryUsagePercentage > 60) {
+//     memoryProgress.style.background = '#ff9800';
+//     log(performance.memoryUsagePercentage)
+// } else {
+//     memoryProgress.style.background = '#4caf50';
+//     log(performance.memoryUsagePercentage);
+// }
+
