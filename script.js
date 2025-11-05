@@ -253,11 +253,11 @@ function drawChart() {
     initCanvasStyles();
     const canvas = getCanvas();
     const ctx = getCtx();
-    const memoryInPercent = performance.memoryUsagePercentage;
-    log(performance.memory);
+    const m = performance.memory;
+    const memoryUsagePercentage = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
     ctx.beginPath();
     ctx.moveTo(0, 75);
-    ctx.lineTo(memoryInPercent / canvas.height, 95);
+    ctx.lineTo(memoryUsagePercentage / canvas.height, 95);
     ctx.stroke();
 }
 drawChart();
@@ -298,15 +298,4 @@ function updateMemoryUsage() {
 
 setInterval(updateMemoryUsage, 2000);
 
-
-// if (performance.memoryUsagePercentage > 80) {
-//     memoryProgress.style.background = '#f44336';
-//     log(performance.memoryUsagePercentage)
-// } else if (performance.memoryUsagePercentage > 60) {
-//     memoryProgress.style.background = '#ff9800';
-//     log(performance.memoryUsagePercentage)
-// } else {
-//     memoryProgress.style.background = '#4caf50';
-//     log(performance.memoryUsagePercentage);
-// }
 
