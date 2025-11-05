@@ -259,6 +259,7 @@ function drawChart() {
     const mins = now.getMinutes();
     const m = performance.memory;
     const memInPercent = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
+    // log(memInPercent);
     ctx.beginPath();
     ctx.moveTo((canvasHeight / memInPercent) * 10, canvasWidth / mins);
     ctx.lineTo((canvasHeight / memInPercent) * 10, canvasWidth / mins);
