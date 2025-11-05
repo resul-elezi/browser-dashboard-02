@@ -206,6 +206,7 @@ window.addEventListener('load', () => {
 // Chart with canvas
 const xLine = [1, 2, 3, 4, 5, 6];
 const yLine = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let currentPath = false;
 
 function getCanvas() {
     return byId('performance-visualization');
@@ -218,7 +219,7 @@ function getCtx() {
 function initCanvasStyles() {
     const ctx = getCtx();
     ctx.strokeStyle = 'red';
-    ctx.lineWidth = 1;
+    ctx.lineWidth = .25;
     ctx.lineCap = 'round';
 }
 function initGridStyles() {
