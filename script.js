@@ -263,7 +263,7 @@ function drawChart() {
     const fakePercent = memInPercent * 1000;
     const percentInHeight = ((canvasHeight / fakePercent) * 10).toFixed(2);
     const minsInWidth = (canvasWidth / 60) * mins;
-    const secsInWidth = canvasWidth / ((minsInWidth * 60) + secs);
+    const secsInWidth = (canvasWidth / 3600) * (mins * 60) + secs;
     log(secsInWidth);
     log(minsInWidth);
     ctx.beginPath();
