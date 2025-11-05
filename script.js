@@ -267,8 +267,15 @@ function drawChart() {
     const totalSecs = mins * 60 + secs;
     const secsInWidth = (canvasWidth / 3600) * totalSecs;
 
-    ctx.beginPath();
-    ctx.lineTo(secsInWidth, percentInHeight);
+    if (!ctx.currentPath) {
+        ctx.beginPath();
+        ctx.moveTo(secsInWidth, percentInHeight);
+        ctx.currentPath = true;
+    } else {
+        ctx.lineTo(secsInWidth, percentInHeight)
+    }
+    // ctx.beginPath();
+    // ctx.lineTo(secsInWidth, percentInHeight);
     ctx.stroke();
 }
 setInterval(drawChart, 1000)
