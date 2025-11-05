@@ -258,8 +258,8 @@ function drawChart() {
     const m = performance.memory;
     const memInPercent = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
     ctx.beginPath();
-    ctx.moveTo(0, 75);
-    ctx.lineTo(memInPercent / canvas.height, 95);
+    ctx.moveTo(memInPercent, mins);
+    ctx.lineTo(memInPercent / mins, mins);
     ctx.stroke();
 }
 drawChart();
