@@ -261,14 +261,14 @@ function drawChart() {
     const m = performance.memory;
     const memInPercent = (m.usedJSHeapSize / m.jsHeapSizeLimit) * 100;
     const fakePercent = memInPercent * 1000;
-    const percentInHeight = ((canvasHeight / fakePercent) * 10).toFixed(2);
-    const minsInWidth = (canvasWidth / 60) * mins;
-    const secsInWidth = (canvasWidth / 3600) * (mins * 60) + secs;
-    log(secsInWidth);
-    log(minsInWidth);
+    // const percentInHeight = ((canvasHeight / fakePercent) * 10).toFixed(2);
+    const percentInHeight = canvasHeight - ((canvasHeight / fakePercent) * 10).toFixed(2);
+    // const minsInWidth = (canvasWidth / 60) * mins;
+    const totalSecs = mins * 60 + secs;
+    const secsInWidth = (canvasWidth / 3600) * totalSecs;
+
     ctx.beginPath();
-    ctx.moveTo(percentInHeight, canvasWidth / mins);
-    ctx.lineTo(percentInHeight, canvasWidth / mins);
+    ctx.lineTo(secsInWidth, percentInHeight);
     ctx.stroke();
 }
 setInterval(drawChart, 1000)
