@@ -317,18 +317,19 @@ setInterval(updateMemoryUsage, 2000);
 
 // Interactive control elements
 
-const windowReference;
 const openWindow = byId('open-window');
 const closeWindow = byId('close-window');
 const fullScreen = byId('fullscreen');
 const exitFullScreen = byId('exit-fullscreen');
+let windowReference;
 
 openWindow.addEventListener('click', e => {
-    const url = byId('full-url').value;
+    // const url = byId('full-url');
+    const url = 'https://github.com/resul-elezi';
     windowReference = window.open(
         url,
         'Fenstertitel',
-        'width=500,height=500,resizable,scrollbars=yes,status=1'
+        'width=650,height=700,resizable,scrollbars=yes,status=1'
     );
 });
 closeWindow.addEventListener('click', e => {
