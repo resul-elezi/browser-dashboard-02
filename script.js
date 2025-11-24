@@ -327,7 +327,7 @@ openWindow.addEventListener('click', e => {
     const url = 'https://google.com';
     windowReference = window.open(
         url,
-        'Fenstertitel',
+        'windowTitle',
         'width=650,height=700,resizable,scrollbars=yes,status=1'
     );
 });
