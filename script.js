@@ -315,3 +315,9 @@ function updateMemoryUsage() {
 setInterval(updateMemoryUsage, 2000);
 
 
+// Interactive control elements
+
+const openWindow = byId('open-window');
+const closeWindow = byId('close-window');
+const fullScreen = byId('fullscreen');
+const exitFullScreen = byId('exit-fullscreen');
