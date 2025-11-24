@@ -324,7 +324,6 @@ const exitFullScreen = byId('exit-fullscreen');
 let windowReference;
 
 openWindow.addEventListener('click', e => {
-    // const url = byId('full-url');
     const url = 'https://google.com';
     windowReference = window.open(
         url,
