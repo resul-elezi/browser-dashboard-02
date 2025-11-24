@@ -317,7 +317,20 @@ setInterval(updateMemoryUsage, 2000);
 
 // Interactive control elements
 
+const windowReference;
 const openWindow = byId('open-window');
 const closeWindow = byId('close-window');
 const fullScreen = byId('fullscreen');
 const exitFullScreen = byId('exit-fullscreen');
+
+openWindow.addEventListener('click', e => {
+    const url = byId('full-url').value;
+    windowReference = window.open(
+        url,
+        'Fenstertitel',
+        'width=500,height=500,resizable,scrollbars=yes,status=1'
+    );
+});
+closeWindow.addEventListener('click', e => {
+    windowReference.close();
+})
