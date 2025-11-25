@@ -328,23 +328,30 @@ openWindow.addEventListener('click', e => {
     windowReference = window.open(
         url,
         'windowTitle',
-        'width=650,height=700,resizable,scrollbars=yes,status=1'
+        'popup=yes,noopener,resizable=yes,width=600,height=400,top=100,left=100,toolbar=no,menubar=no,scrollbars=yes,status=1'
     );
-});
-closeWindow.addEventListener('click', e => {
-    windowReference.close();
-})
+    fullScreen.addEventListener('click', () => {
+        if (!window.fullScreen) {
+            log('ist nicht fullScreen');
 
-fullScreen.addEventListener('click', () => {
-    if (documentElement.requestFullscreen) {
-        documentElement.requestFullscreen();
-    } else if (documentElement.mozRequestFullScreen) { /* Firefox */
-        documentElement.mozRequestFullScreen();
-    } else if (documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-        documentElement.webkitRequestFullscreen();
-    } else if (documentElement.msRequestFullscreen) { /* IE/Edge */
-        documentElement.msRequestFullscreen();
-    }
+            log(screen.availHeight);
+            log(screen.availWidth);
+        }
+    });
+    closeWindow.addEventListener('click', e => {
+        windowReference.close();
+    })
+
+    // if (documentElement.requestFullscreen) {
+    //     documentElement.requestFullscreen();
+    // } 
+    // else if (documentElement.mozRequestFullScreen) { /* Firefox */
+    //     documentElement.mozRequestFullScreen();
+    // } else if (documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    //     documentElement.webkitRequestFullscreen();
+    // } else if (documentElement.msRequestFullscreen) { /* IE/Edge */
+    //     documentElement.msRequestFullscreen();
+    // }
 });
 
 // fullScreen.addEventListener('click', e => {
