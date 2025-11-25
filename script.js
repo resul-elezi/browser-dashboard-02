@@ -330,11 +330,11 @@ openWindow.addEventListener('click', e => {
         'windowTitle',
         'popup=yes,noopener,resizable=yes,width=600,height=400,top=10,left=10,toolbar=no,menubar=no'
     );
+    closeWindow.addEventListener('click', e => {
+        windowReference.close();
+    })
 });
 
-closeWindow.addEventListener('click', e => {
-    windowReference.close();
-})
 
 fullScreen.addEventListener('click', () => {
     if (document.documentElement.requestFullscreen) {
