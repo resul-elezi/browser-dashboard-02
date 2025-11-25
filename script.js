@@ -331,18 +331,22 @@ openWindow.addEventListener('click', e => {
         'width=650,height=700,resizable,scrollbars=yes,status=1'
     );
 });
+fullScreen.addEventListener('click', () => {
+    window.moveTo(0, 0);
+    window.resizeTo(screen.availWidth, screen.availHeight);
+})
 closeWindow.addEventListener('click', e => {
     windowReference.close();
 })
 
-fullScreen.addEventListener('click', e => {
-    const url = 'https://google.com';
-    windowReference = window.open(
-        url,
-        'windowTitle',
-        'width=100vw,height=100vh,resizable,scrollbars=yes,status=1'
-    );
-});
-exitFullScreen.addEventListener('click', e => {
-    windowReference.close();
-})
+// fullScreen.addEventListener('click', e => {
+//     // const url = 'https://google.com';
+//     windowReference = window.open(
+//         '',
+//         'windowTitle',
+//         'fullScreen=yes,scrollbars=yes,status=1'
+//     );
+// });
+// exitFullScreen.addEventListener('click', e => {
+//     windowReference.close();
+// })
