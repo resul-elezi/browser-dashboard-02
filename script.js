@@ -328,12 +328,12 @@ openWindow.addEventListener('click', e => {
     windowReference = window.open(
         url,
         'windowTitle',
-        'popup=yes,noopener,resizable=yes,width=600,height=400,top=10,left=10,toolbar=no,menubar=no'
+        'width=500,height=500,resizable,scrollbars=yes,status=1'
     );
-    closeWindow.addEventListener('click', e => {
-        windowReference.close();
-    })
 });
+closeWindow.addEventListener('click', e => {
+    windowReference.close();
+})
 
 
 fullScreen.addEventListener('click', () => {
