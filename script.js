@@ -328,7 +328,7 @@ openWindow.addEventListener('click', e => {
     windowReference = window.open(
         url,
         'windowTitle',
-        'popup=yes,noopener,resizable=yes,width=600,height=400,top=10,left=10,toolbar=no,menubar=no,scrollbars=yes,status=1'
+        'popup=yes,noopener,resizable=yes,width=600,height=400,top=10,left=10,toolbar=no,menubar=no'
     );
     fullScreen.addEventListener('click', () => {
         if (!window.fullScreen) {
