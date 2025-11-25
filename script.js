@@ -331,13 +331,21 @@ openWindow.addEventListener('click', e => {
         'width=650,height=700,resizable,scrollbars=yes,status=1'
     );
 });
-fullScreen.addEventListener('click', () => {
-    window.moveTo(0, 0);
-    window.resizeTo(screen.availWidth, screen.availHeight);
-})
 closeWindow.addEventListener('click', e => {
     windowReference.close();
 })
+
+fullScreen.addEventListener('click', () => {
+    if (documentElement.requestFullscreen) {
+        documentElement.requestFullscreen();
+    } else if (documentElement.mozRequestFullScreen) { /* Firefox */
+        documentElement.mozRequestFullScreen();
+    } else if (documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        documentElement.webkitRequestFullscreen();
+    } else if (documentElement.msRequestFullscreen) { /* IE/Edge */
+        documentElement.msRequestFullscreen();
+    }
+});
 
 // fullScreen.addEventListener('click', e => {
 //     // const url = 'https://google.com';
