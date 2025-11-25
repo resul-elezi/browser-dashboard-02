@@ -332,7 +332,7 @@ openWindow.addEventListener('click', e => {
     );
 });
 fullScreen.addEventListener('click', () => {
-    if (!window.fullScreen) {
+    if (window.fullScreen) {
         log('ist nicht fullScreen');
 
         window.moveTo(0, 0);
