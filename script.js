@@ -331,29 +331,33 @@ openWindow.addEventListener('click', e => {
         'popup=yes,noopener,resizable=yes,width=600,height=400,top=10,left=10,toolbar=no,menubar=no'
     );
 });
+
+closeWindow.addEventListener('click', e => {
+    windowReference.close();
+})
+
 fullScreen.addEventListener('click', () => {
-    if (!window.fullScreen) {
-        log('ist nicht fullScreen');
-
+    if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
-        // window.resizeTo(screen.availWidth, screen.availHeight);
+    } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+        document.documentElement.msRequestFullscreen();
     }
-    closeWindow.addEventListener('click', e => {
-        windowReference.close();
-    })
-
-    // if (documentElement.requestFullscreen) {
-    //     documentElement.requestFullscreen();
-    // } 
-    // else if (documentElement.mozRequestFullScreen) { /* Firefox */
-    //     documentElement.mozRequestFullScreen();
-    // } else if (documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-    //     documentElement.webkitRequestFullscreen();
-    // } else if (documentElement.msRequestFullscreen) { /* IE/Edge */
-    //     documentElement.msRequestFullscreen();
-    // }
 });
-
+exitFullScreen.addEventListener('click', () => {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+    }
+});
 // fullScreen.addEventListener('click', e => {
 //     // const url = 'https://google.com';
 //     windowReference = window.open(
