@@ -334,3 +334,15 @@ openWindow.addEventListener('click', e => {
 closeWindow.addEventListener('click', e => {
     windowReference.close();
 })
+
+fullScreen.addEventListener('click', e => {
+    const url = 'https://google.com';
+    windowReference = window.open(
+        url,
+        'windowTitle',
+        'width=100vw,height=100vh,resizable,scrollbars=yes,status=1'
+    );
+});
+exitFullScreen.addEventListener('click', e => {
+    windowReference.close();
+})
