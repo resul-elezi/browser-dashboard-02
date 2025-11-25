@@ -328,14 +328,14 @@ openWindow.addEventListener('click', e => {
     windowReference = window.open(
         url,
         'windowTitle',
-        'popup=yes,noopener,resizable=yes,width=600,height=400,top=100,left=100,toolbar=no,menubar=no,scrollbars=yes,status=1'
+        'popup=yes,noopener,resizable=yes,width=600,height=400,top=10,left=10,toolbar=no,menubar=no,scrollbars=yes,status=1'
     );
     fullScreen.addEventListener('click', () => {
         if (!window.fullScreen) {
             log('ist nicht fullScreen');
 
-            log(screen.availHeight);
-            log(screen.availWidth);
+            window.moveTo(0, 0);
+            window.resizeTo(screen.availWidth, screen.availHeight);
         }
     });
     closeWindow.addEventListener('click', e => {
