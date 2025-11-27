@@ -365,9 +365,10 @@ scrollBtn.addEventListener('click', () => {
     panelIcons.forEach((icon) => {
         if (elementInputField.value === icon.textContent) {
             icon.scrollIntoView({ behavior: 'smooth' });
+            elementInputField.value = '';
         } else {
             elementInputField.style.color = 'red';
-            elementInputField.value = 'Bitte eine Zahl von 1 - 10 eingeben';
+            elementInputField.value = 'Bitte eine Zahl zwischen 1 und 10 eingeben';
             elementInputField.style.borderColor = 'red';
 
         }
