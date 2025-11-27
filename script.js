@@ -368,7 +368,7 @@ scrollBtn.addEventListener('click', () => {
             elementInputField.value = '';
         } else {
             elementInputField.style.color = 'red';
-            elementInputField.value = 'Bitte eine Zahl zwischen 1 und 10 eingeben';
+            elementInputField.value = 'Bitte eine Zahl zwischen 1 und 10 eingeben!';
             elementInputField.style.borderColor = 'red';
 
         }
