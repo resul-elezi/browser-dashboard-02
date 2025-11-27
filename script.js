@@ -323,7 +323,7 @@ const fullScreen = byId('fullscreen');
 const exitFullScreen = byId('exit-fullscreen');
 let windowReference;
 
-openWindow.addEventListener('click', e => {
+openWindow.addEventListener('click', () => {
     const url = window.location;
     windowReference = window.open(
         url,
@@ -331,7 +331,7 @@ openWindow.addEventListener('click', e => {
         'width=500,height=500,resizable,scrollbars=yes,status=1'
     );
 });
-closeWindow.addEventListener('click', e => {
+closeWindow.addEventListener('click', () => {
     windowReference.close();
 })
 
@@ -358,6 +358,7 @@ exitFullScreen.addEventListener('click', () => {
         windowReference.msExitFullscreen();
     }
 });
+
 // fullScreen.addEventListener('click', () => {
 //     if (windowReference) {
 //         windowReference.moveTo(0, 0);
