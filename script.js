@@ -335,35 +335,35 @@ closeWindow.addEventListener('click', e => {
     windowReference.close();
 })
 
+
+fullScreen.addEventListener('click', () => {
+    if (windowReference.requestFullscreen) {
+        windowReference.requestFullscreen();
+    } else if (windowReference.mozRequestFullScreen) { /* Firefox */
+        windowReference.mozRequestFullScreen();
+    } else if (windowReference.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        windowReference.webkitRequestFullscreen();
+    } else if (windowReference.msRequestFullscreen) { /* IE/Edge */
+        windowReference.msRequestFullscreen();
+    }
+});
+exitFullScreen.addEventListener('click', () => {
+    if (windowReference.exitFullscreen) {
+        windowReference.exitFullscreen();
+    } else if (windowReference.mozCancelFullScreen) {
+        windowReference.mozCancelFullScreen();
+    } else if (windowReference.webkitExitFullscreen) {
+        windowReference.webkitExitFullscreen();
+    } else if (windowReference.msExitFullscreen) {
+        windowReference.msExitFullscreen();
+    }
+});
 // fullScreen.addEventListener('click', () => {
 //     if (windowReference) {
 //         windowReference.moveTo(0, 0);
 //         windowReference.resizeTo(screen.availWidth, screen.availHeight);
 //     }
 // });
-
-fullScreen.addEventListener('click', () => {
-    if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-    } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-        document.documentElement.mozRequestFullScreen();
-    } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-        document.documentElement.webkitRequestFullscreen();
-    } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-        document.documentElement.msRequestFullscreen();
-    }
-});
-exitFullScreen.addEventListener('click', () => {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-    }
-});
 // fullScreen.addEventListener('click', e => {
 //     // const url = 'https://google.com';
 //     windowReference = window.open(
