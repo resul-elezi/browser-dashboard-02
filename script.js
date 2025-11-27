@@ -335,17 +335,36 @@ closeWindow.addEventListener('click', () => {
     windowReference.close();
 })
 
+// fullScreen.addEventListener('click', () => {
+//     if (windowReference) {
+//         windowReference.moveTo(0, 0);
+//         windowReference.resizeTo(screen.availWidth, screen.availHeight);
+//     }
+// });
+// exitFullScreen.addEventListener('click', () => {
+//     if (windowReference &&
+//         windowReference.outerWidth === screen.availWidth &&
+//         windowReference.outerHeight === screen.availHeight) {
+//         windowReference.resizeTo(500, 500);
+//         windowReference.moveTo(screen.availWidth / 2, screen.availHeight / 2);
+//     }
+// })
+
+
+let isMaximized = false;
+
 fullScreen.addEventListener('click', () => {
-    if (windowReference) {
+    if (windowReference && !isMaximized) {
         windowReference.moveTo(0, 0);
         windowReference.resizeTo(screen.availWidth, screen.availHeight);
+        isMaximized = true;
     }
 });
+
 exitFullScreen.addEventListener('click', () => {
-    if (windowReference &&
-        windowReference.outerWidth === screen.availWidth &&
-        windowReference.outerHeight === screen.availHeight) {
+    if (windowReference && isMaximized) {
         windowReference.resizeTo(500, 500);
         windowReference.moveTo(screen.availWidth / 2, screen.availHeight / 2);
+        isMaximized = false;
     }
-})
+});
