@@ -333,27 +333,11 @@ openWindow.addEventListener('click', () => {
         'width=500,height=500,resizable,scrollbars=yes,status=1'
     );
 });
+
 closeWindow.addEventListener('click', () => {
     isMaximized = false;
     windowReference.close();
 })
-
-// fullScreen.addEventListener('click', () => {
-//     if (windowReference) {
-//         windowReference.moveTo(0, 0);
-//         windowReference.resizeTo(screen.availWidth, screen.availHeight);
-//     }
-// });
-// exitFullScreen.addEventListener('click', () => {
-//     if (windowReference &&
-//         windowReference.outerWidth === screen.availWidth &&
-//         windowReference.outerHeight === screen.availHeight) {
-//         windowReference.resizeTo(500, 500);
-//         windowReference.moveTo(screen.availWidth / 2, screen.availHeight / 2);
-//     }
-// })
-
-
 
 fullScreen.addEventListener('click', () => {
     if (windowReference && !isMaximized) {
