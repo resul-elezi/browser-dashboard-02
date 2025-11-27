@@ -342,9 +342,9 @@ fullScreen.addEventListener('click', () => {
     }
 });
 exitFullScreen.addEventListener('click', () => {
-    const fullWidth = screen.availWidth;
-    const fullHeight = screen.availHeight;
-    if (windowReference.screen.width === fullWidth && windowReference.screen.height === fullHeight) {
+    if (windowReference &&
+        windowReference.outerWidth === screen.availWidth &&
+        windowReference.outerHeight === screen.availHeight) {
         windowReference.resizeTo(500, 500);
         windowReference.moveTo(screen.availWidth / 2, screen.availHeight / 2);
     }
