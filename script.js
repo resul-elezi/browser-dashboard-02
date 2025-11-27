@@ -366,7 +366,7 @@ elementInputField.addEventListener('focus', () => {
     elementInputField.style.color = '';
     elementInputField.style.borderColor = '';
 
-})
+});
 scrollBtn.addEventListener('click', () => {
     let foundMatch = false;
 
