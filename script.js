@@ -349,38 +349,3 @@ exitFullScreen.addEventListener('click', () => {
         windowReference.moveTo(screen.availWidth / 2, screen.availHeight / 2);
     }
 })
-// fullScreen.addEventListener('click', () => {
-//     if (windowReference.document.documentElement.requestFullscreen) {
-//         log('es ist fullscreen');
-//         windowReference.requestFullscreen();
-//     } else if (windowReference.mozRequestFullScreen) { /* Firefox */
-//         windowReference.mozRequestFullScreen();
-//     } else if (windowReference.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-//         windowReference.webkitRequestFullscreen();
-//     } else if (windowReference.msRequestFullscreen) { /* IE/Edge */
-//         windowReference.msRequestFullscreen();
-//     }
-// });
-// exitFullScreen.addEventListener('click', () => {
-//     if (windowReference.exitFullscreen) {
-//         windowReference.exitFullscreen();
-//     } else if (windowReference.mozCancelFullScreen) {
-//         windowReference.mozCancelFullScreen();
-//     } else if (windowReference.webkitExitFullscreen) {
-//         windowReference.webkitExitFullscreen();
-//     } else if (windowReference.msExitFullscreen) {
-//         windowReference.msExitFullscreen();
-//     }
-// });
-
-// fullScreen.addEventListener('click', e => {
-//     // const url = 'https://google.com';
-//     windowReference = window.open(
-//         '',
-//         'windowTitle',
-//         'fullScreen=yes,scrollbars=yes,status=1'
-//     );
-// });
-// exitFullScreen.addEventListener('click', e => {
-//     windowReference.close();
-// })
