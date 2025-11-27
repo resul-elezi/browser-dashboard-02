@@ -358,8 +358,11 @@ exitFullScreen.addEventListener('click', () => {
 // ** Scrolling to elements
 
 const panelIcons = $$('.panel-icon');
+const elementInputField = byId('scroll-to-element');
 const scrollBtn = byId('scroll-to-button');
 
 panelIcons.forEach((icon) => {
-    log(icon);
+    if (elementInputField.value === icon.textContent) {
+        window.scroll(icon);
+    }
 })
