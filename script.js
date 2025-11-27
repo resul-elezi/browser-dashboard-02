@@ -361,16 +361,26 @@ const panelIcons = $$('.panel-icon');
 const elementInputField = byId('scroll-to-element');
 const scrollBtn = byId('scroll-to-button');
 
+elementInputField.addEventListener('focus', () => {
+    elementInputField.value = '';
+    elementInputField.style.color = '';
+    elementInputField.style.borderColor = '';
+
+})
 scrollBtn.addEventListener('click', () => {
+    let foundMatch = false;
+
     panelIcons.forEach((icon) => {
         if (elementInputField.value === icon.textContent) {
             icon.scrollIntoView({ behavior: 'smooth' });
             elementInputField.value = '';
-        } else {
-            elementInputField.style.color = 'red';
-            elementInputField.value = 'Bitte eine Zahl zwischen 1 und 10 eingeben!';
-            elementInputField.style.borderColor = 'red';
-
+            foundMatch = true;
         }
-    })
-})
+    });
+
+    if (!foundMatch) {
+        elementInputField.style.color = 'red';
+        elementInputField.value = 'Bitte eine Zahl zwischen 1 und 10 eingeben!';
+        elementInputField.style.borderColor = 'red';
+    }
+});
