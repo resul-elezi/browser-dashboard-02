@@ -363,9 +363,9 @@ fullScreen.addEventListener('click', () => {
 
 exitFullScreen.addEventListener('click', () => {
     if (windowReference && isMaximized) {
-        windowReference.focus();
         windowReference.resizeTo(600, 600);
         windowReference.moveTo(screen.availWidth / 2, screen.availHeight / 2);
+        windowReference.focus();
         isMaximized = false;
     }
 });
