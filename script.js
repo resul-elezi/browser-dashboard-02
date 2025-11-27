@@ -337,7 +337,8 @@ closeWindow.addEventListener('click', () => {
 
 
 fullScreen.addEventListener('click', () => {
-    if (windowReference.requestFullscreen) {
+    if (windowReference.document.documentElement.requestFullscreen) {
+        log('es ist fullscreen');
         windowReference.requestFullscreen();
     } else if (windowReference.mozRequestFullScreen) { /* Firefox */
         windowReference.mozRequestFullScreen();
