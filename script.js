@@ -361,8 +361,15 @@ const panelIcons = $$('.panel-icon');
 const elementInputField = byId('scroll-to-element');
 const scrollBtn = byId('scroll-to-button');
 
-panelIcons.forEach((icon) => {
-    if (elementInputField.value === icon.textContent) {
-        window.scroll(icon);
-    }
+scrollBtn.addEventListener('click', () => {
+    panelIcons.forEach((icon) => {
+        if (elementInputField.value === icon.textContent) {
+            icon.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            elementInputField.style.color = 'red';
+            elementInputField.value = 'Bitte eine Zahl von 1 - 10 eingeben';
+            elementInputField.style.borderColor = 'red';
+
+        }
+    })
 })
