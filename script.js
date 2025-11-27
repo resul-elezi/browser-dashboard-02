@@ -322,8 +322,10 @@ const closeWindow = byId('close-window');
 const fullScreen = byId('fullscreen');
 const exitFullScreen = byId('exit-fullscreen');
 let windowReference;
+let isMaximized = false;
 
 openWindow.addEventListener('click', () => {
+    isMaximized = false;
     const url = window.location;
     windowReference = window.open(
         url,
@@ -332,6 +334,7 @@ openWindow.addEventListener('click', () => {
     );
 });
 closeWindow.addEventListener('click', () => {
+    isMaximized = false;
     windowReference.close();
 })
 
@@ -351,7 +354,6 @@ closeWindow.addEventListener('click', () => {
 // })
 
 
-let isMaximized = false;
 
 fullScreen.addEventListener('click', () => {
     if (windowReference && !isMaximized) {
