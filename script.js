@@ -6,12 +6,11 @@ window.$ = (selector) => document.querySelector(selector);
 window.$$ = (selector) => document.querySelectorAll(selector);
 window.log = console.log;
 
-
-
 // use case
 // const element = $('#myId');
 // const elements = $$('.myClass');
 // const header = byId('header');
+
 
 // Browser-Umgebungsmonitor
 
@@ -355,3 +354,8 @@ exitFullScreen.addEventListener('click', () => {
         isMaximized = false;
     }
 });
+
+// ** Scrolling to elements
+
+const panelIcons = $$('.panel-icon');
+
