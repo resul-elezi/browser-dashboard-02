@@ -403,3 +403,21 @@ showAlert.addEventListener('click', () => {
 // text
 // input feld
 // untenrechts abbrechen btn(grau) und ein btn mit ok
+
+
+/* <section class="panel" id="">
+        <div class="panel-header">
+          <h2 class="panel-title">Alert</h2>
+        </div>
+        <div class="panel-content">
+
+          <div class="status-item">
+            <span class="status-label">"Willkommen im Dashboard!"</span>
+          </div>
+          <div class="btn-group">
+            <button class="btn" id="show-alert">Alert anzeigen</button>
+            <button class="btn" id="show-confirm">Confirm anzeigen</button>
+            <button class="btn" id="show-prompt">Prompt anzeigen</button>
+          </div>
+        </div>
+      </section> */
