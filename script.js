@@ -392,7 +392,7 @@ const showConfirm = byId('show-confirm');
 const showPrompt = byId('show-prompt');
 
 showAlert.addEventListener('click', () => {
-    alert('\u{1F310} ' + fullUrl.hostname + ':' + fullUrl.port);
+    alert('\u{1F310} ' + location.hostname + ':' + location.port);
 })
 
 // Alert -> weblogo dann addresse und port
