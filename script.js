@@ -390,3 +390,16 @@ scrollBtn.addEventListener('click', () => {
 const showAlert = byId('show-alert');
 const showConfirm = byId('show-confirm');
 const showPrompt = byId('show-prompt');
+
+showAlert.addEventListener('click', () => {
+    alert(fullUrl.hostname + ':' + fullUrl.port);
+})
+
+// Alert -> weblogo dann addresse und port
+// text
+// untenrechts ein btn mit ok
+
+// Prompt -> weblogo dann addresse und port
+// text
+// input feld
+// untenrechts abbrechen btn(grau) und ein btn mit ok
