@@ -384,3 +384,9 @@ scrollBtn.addEventListener('click', () => {
         elementInputField.style.borderColor = 'red';
     }
 });
+
+// ** Dialog manager 
+
+const showAlert = byId('show-alert');
+const showConfirm = byId('show-confirm');
+const showPrompt = byId('show-prompt');
