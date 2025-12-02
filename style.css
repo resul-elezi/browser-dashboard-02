@@ -110,13 +110,15 @@ h1 {
 .modal {
     position: absolute;
     top: 30%;
-    left: 40%;
+    left: 43%;
     z-index: 100;
 }
 
 .modal:hover {
     transform: none;
 }
+
+.ok-btn {}
 
 /* Status Items */
 .status-item {
