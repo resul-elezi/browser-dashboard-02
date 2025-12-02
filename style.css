@@ -94,6 +94,7 @@ h1 {
 /* Overlay */
 
 .overlay {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;

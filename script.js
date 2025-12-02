@@ -423,6 +423,7 @@ const showPrompt = byId('show-prompt');
       </section> */
 
 const dashboardContent = $('.dashboard');
+const overlay = byId('overlay');
 const modalTitle = 'Alert ';
 const contentForModals = `<section class="panel modal" id="">
         <div class="panel-header">
@@ -442,5 +443,6 @@ const contentForModals = `<section class="panel modal" id="">
     </section>`;
 
 showAlert.addEventListener('click', () => {
+    overlay.style.display = 'block';
     dashboardContent.innerHTML += contentForModals;
 })
