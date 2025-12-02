@@ -7,6 +7,7 @@
 }
 
 body {
+    position: relative;
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: #333;
     line-height: 1.6;
@@ -39,7 +40,6 @@ h1 {
 
 /* Dashboard Grid */
 .dashboard {
-    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
@@ -90,6 +90,19 @@ h1 {
 .panel-content {
     padding: 10px 0;
 }
+
+/* Overlay */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .80);
+    z-index: 90;
+}
+
 
 /* Modal styles */
 
