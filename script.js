@@ -434,9 +434,9 @@ const contentForModals = `<section class="panel modal" id="">
             <div class="status-item">
                 <span class="status-label">"Willkommen im Dashboard!"</span>
             </div>
-                <div class="modal-btns>
+                <div class="modal-btns">
                 <button class="btn ok-btn" id="ok-btn">OK</button>
-                </div
+                </div>
         
         </div>
     </section>`;
