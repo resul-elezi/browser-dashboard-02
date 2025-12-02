@@ -423,7 +423,7 @@ const showPrompt = byId('show-prompt');
       </section> */
 
 const dashboardContent = $('.dashboard');
-const overlay = byId('overlay');
+const overlay = $('.overlay');
 const modalTitle = 'Alert ';
 const contentForModals = `<section class="panel modal" id="">
         <div class="panel-header">
