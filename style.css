@@ -118,7 +118,9 @@ h1 {
     transform: none;
 }
 
-.ok-btn {}
+.ok-btn {
+    float: inline-end;
+}
 
 /* Status Items */
 .status-item {
