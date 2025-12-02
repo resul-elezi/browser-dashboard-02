@@ -423,13 +423,17 @@ const showPrompt = byId('show-prompt');
       </section> */
 
 const dashboardContent = $('.dashboard');
-const dialogBtns = $$('.dialog-window-btns');
+const dialogBtns = $('.dialog-window-btns');
 const overlay = $('.overlay');
 const modalTitle = ['Alert', 'Prompt', 'Confirm']
-dialogBtns.forEach(btn => {
-    modalTitle[btn];
-    log(modalTitle.btn);
+dialogBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+        console.log(i);
+    })
+    // log(modalTitle[btn]);
 })
+
+
 const contentForModals = `<section class="panel modal" id="">
         <div class="panel-header">
             <h2 class="panel-title">${modalTitle}</h2>
@@ -446,7 +450,7 @@ const contentForModals = `<section class="panel modal" id="">
         </div>
     </section>`;
 
-showAlert.addEventListener('click', () => {
-    overlay.style.display = 'block';
-    dashboardContent.innerHTML += contentForModals;
-})
+// showAlert.addEventListener('click', () => {
+//     overlay.style.display = 'block';
+//     dashboardContent.innerHTML += contentForModals;
+// })
