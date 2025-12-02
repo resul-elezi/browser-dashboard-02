@@ -434,11 +434,8 @@ const contentForModals = `<section class="panel modal" id="">
             <div class="status-item">
                 <span class="status-label">"Willkommen im Dashboard!"</span>
             </div>
-            <div class="btn-group">
-                <button class="btn" id="show-alert">Alert anzeigen</button>
-                <button class="btn" id="show-confirm">Confirm anzeigen</button>
-                <button class="btn" id="show-prompt">Prompt anzeigen</button>
-            </div>
+                <button class="btn ok-btn" id="ok-btn">OK</button>
+        
         </div>
     </section>`;
 
