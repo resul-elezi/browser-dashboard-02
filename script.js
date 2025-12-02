@@ -423,8 +423,13 @@ const showPrompt = byId('show-prompt');
       </section> */
 
 const dashboardContent = $('.dashboard');
+const dialogBtns = $$('.dialog-window-btns');
 const overlay = $('.overlay');
-const modalTitle = 'Alert ';
+const modalTitle = ['Alert', 'Prompt', 'Confirm']
+dialogBtns.forEach(btn => {
+    modalTitle[btn];
+    log(modalTitle.btn);
+})
 const contentForModals = `<section class="panel modal" id="">
         <div class="panel-header">
             <h2 class="panel-title">${modalTitle}</h2>
