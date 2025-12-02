@@ -118,7 +118,8 @@ h1 {
     transform: none;
 }
 
-.ok-btn {
+.modal-btns {
+    padding-top: 1rem;
     float: inline-end;
 }
 
