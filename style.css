@@ -39,6 +39,7 @@ h1 {
 
 /* Dashboard Grid */
 .dashboard {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
@@ -89,6 +90,16 @@ h1 {
 .panel-content {
     padding: 10px 0;
 }
+
+/* Modal styles */
+
+.modal {
+    position: absolute;
+    top: 50vh;
+    left: 25vw;
+    z-index: 100;
+}
+
 
 /* Status Items */
 .status-item {

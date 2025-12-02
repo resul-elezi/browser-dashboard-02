@@ -424,7 +424,7 @@ const showPrompt = byId('show-prompt');
 
 const dashboardContent = $('.dashboard');
 const modalTitle = 'Alert ';
-const contentForModals = `<section class="panel" id="">
+const contentForModals = `<section class="panel modal" id="">
         <div class="panel-header">
             <h2 class="panel-title">${modalTitle}</h2>
         </div>
