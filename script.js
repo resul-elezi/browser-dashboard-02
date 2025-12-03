@@ -432,16 +432,16 @@ const clickedModalBtn = (index) => {
     byId(id).addEventListener('click', () => {
         currentModalTitle = capitalize(modalTitles[index]);
         overlay.style.display = 'block';
-        dashboardContent.innerHTML += contentForModals;
+        dashboardContent.innerHTML += renderModalContent(currentModalTitle);
     })
 }
 for (let i = 0; i < modalTitles.length; i++) {
     clickedModalBtn(i);
 }
 
-const contentForModals = `<section class="panel modal" id="">
+const renderModalContent = (title) => `<section class="panel modal" id="">
         <div class="panel-header">
-            <h2 class="panel-title">${currentModalTitle}</h2>
+            <h2 class="panel-title">${title}</h2>
         </div>
         <div class="panel-content">
 
