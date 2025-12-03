@@ -425,18 +425,20 @@ const showPrompt = byId('show-prompt');
 const dashboardContent = $('.dashboard');
 const dialogBtns = $('.dialog-window-btns');
 const overlay = $('.overlay');
-const modalTitle = ['alert', 'confirm', 'prompt'];
+const modalTitles = ['alert', 'confirm', 'prompt'];
+let currentModalTitle = null;
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-const clickedModal = (index) => {
-    const id = `show-${modalTitle[index]}`;
+const clickedModalBtn = (index) => {
+    const id = `show-${modalTitles[index]}`;
     byId(id).addEventListener('click', () => {
-        log(`Es wurde ${capitalize(modalTitle[index])} geklickt.`);
+        currentModalTitle = capitalize(modalTitles[index]);
+        log(`Es wurde ${currentModalTitle} geklickt.`);
         // overlay.style.display = 'block';
         // dashboardContent.innerHTML += contentForModals;
     })
 }
-for (let i = 0; i < modalTitle.length; i++) {
-    clickedModal(i);
+for (let i = 0; i < modalTitles.length; i++) {
+    clickedModalBtn(i);
 }
 // dialogBtns.forEach((btn, i) => {
 //     btn.addEventListener('click', () => {
