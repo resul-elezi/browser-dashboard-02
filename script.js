@@ -430,7 +430,9 @@ const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 const clickedModal = (index) => {
     const id = `show-${modalTitle[index]}`;
     byId(id).addEventListener('click', () => {
-        log(`Es wurde ${capitalize(modalTitle[index])} geklickt.`)
+        // log(`Es wurde ${capitalize(modalTitle[index])} geklickt.`);
+        overlay.style.display = 'block';
+        dashboardContent.innerHTML += contentForModals;
     })
 }
 for (let i = 0; i < modalTitle.length; i++) {
