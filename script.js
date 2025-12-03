@@ -426,10 +426,11 @@ const dashboardContent = $('.dashboard');
 const dialogBtns = $('.dialog-window-btns');
 const overlay = $('.overlay');
 const modalTitle = ['alert', 'confirm', 'prompt'];
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 const clickedModal = (index) => {
     const id = `show-${modalTitle[index]}`;
     byId(id).addEventListener('click', () => {
-        log(`Es wurde ${modalTitle[index]} geklickt.`)
+        log(`Es wurde ${capitalize(modalTitle[index])} geklickt.`)
     })
 }
 for (let i = 0; i < modalTitle.length; i++) {
