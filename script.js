@@ -450,7 +450,7 @@ for (let i = 0; i < modalTitles.length; i++) {
 }
 
 const renderModalContent = ({ title, content, buttons }) => `
-    <section class="panel modal" id="">
+    <section class="panel modal">
         <div class="panel-header">
             <h2 class="panel-title">${title}</h2>
             </div>
@@ -485,18 +485,10 @@ const modalData = {
         `,
         buttons: `
             <button class="btn cancel-btn">Abbrechen</button>
-            <button class="btn yes-btn">Ok</button>
+            <button class="btn ok-btn">Ok</button>
             `
     }
 };
 
+const modal = $('.modal');
 
-// showAlert.addEventListener('click', () => {
-//     overlay.style.display = 'block';
-//     dashboardContent.innerHTML += contentForModals;
-// })
-
-// showAlert.addEventListener('click', () => {
-//     let ausgabe = window.confirm('Ihren Namen bitte');
-//     alert(ausgabe);
-// })
