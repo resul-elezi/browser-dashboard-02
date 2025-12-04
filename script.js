@@ -439,23 +439,26 @@ for (let i = 0; i < modalTitles.length; i++) {
     clickedModalBtn(i);
 }
 
-const renderModalContent = (title) => `<section class="panel modal" id="">
+const renderModalContent = ({ title, content, buttons }) => `<section class="panel modal" id="">
         <div class="panel-header">
             <h2 class="panel-title">${title}</h2>
         </div>
         <div class="panel-content">
-
             <div class="status-item">
-                <span class="status-label">"Willkommen im Dashboard!"</span>
+            ${content}
             </div>
-                <div class="modal-btns">
-                <button class="btn ok-btn" id="ok-btn">OK</button>
-                </div>
-        
+            <div class="modal-btns">
+            ${buttons}
+            </div>
         </div>
     </section>`;
 
 // showAlert.addEventListener('click', () => {
 //     overlay.style.display = 'block';
 //     dashboardContent.innerHTML += contentForModals;
+// })
+
+// showAlert.addEventListener('click', () => {
+//     let ausgabe = window.prompt('Ihren Namen bitte');
+//     alert(ausgabe);
 // })
