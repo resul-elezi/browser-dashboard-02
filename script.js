@@ -458,5 +458,9 @@ const modalData = {
     }
 };
 
-const modal = $('.modal');
+dashboardContent.addEventListener('click', (e) => {
+    if (e.target.matches('.ok-btn')) {
+        overlay.style.display = 'none';
+    }
+})
 
