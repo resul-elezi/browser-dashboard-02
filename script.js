@@ -480,7 +480,7 @@ const modalData = {
     },
     prompt: {
         content: `
-            <span class="status-label">Gib deinen Namen ein</span>
+            <span class="status-label">Gib deinen Namen ein</span><br>
             <input type="text" id="prompt-input"/>
         `,
         buttons: `
