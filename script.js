@@ -456,7 +456,7 @@ const renderModalContent = ({ title, content, buttons }) => `
             </div>
             <p class="status-label">\u{1F310} ${location.hostname}:${location.port}</p>
             <div class="panel-content">
-            <div class="status-item">
+            <div class="status-item" style="display: block">
             ${content}
             </div>
             <div class="modal-btns">
@@ -480,7 +480,7 @@ const modalData = {
     },
     prompt: {
         content: `
-            <span class="status-label" style="display: block;">Gib deinen Namen ein</span><br>
+            <span class="status-label" style="display: block !important;">Gib deinen Namen ein</span><br>
             <input type="text" id="prompt-input"/>
         `,
         buttons: `
