@@ -427,14 +427,24 @@ const overlay = $('.overlay');
 const modalTitles = ['alert', 'confirm', 'prompt'];
 let currentModalTitle = null;
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
 const clickedModalBtn = (index) => {
-    const id = `show-${modalTitles[index]}`;
+    const key = modalTitles[index];
+    const id = `show-${key}`;
+
     byId(id).addEventListener('click', () => {
-        currentModalTitle = capitalize(modalTitles[index]);
+        const title = capitalize(key);
+        const { content, buttons } = modalData[key];
+
         overlay.style.display = 'block';
-        dashboardContent.innerHTML += renderModalContent(currentModalTitle);
-    })
-}
+        dashboardContent.innerHTML += renderModalContent({
+            title,
+            content,
+            buttons
+        });
+    });
+};
+
 for (let i = 0; i < modalTitles.length; i++) {
     clickedModalBtn(i);
 }
