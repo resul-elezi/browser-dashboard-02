@@ -461,7 +461,7 @@ const modalData = {
 dashboardContent.addEventListener('click', (e) => {
     const modal = $('.modal');
     const promptInput = byId('prompt-input');
-    const promptValue = '';
+    const promptValue = [];
     if (e.target.matches('.ok-btn')) {
         overlay.style.display = 'none';
         modal.remove();
