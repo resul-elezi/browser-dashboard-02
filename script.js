@@ -458,10 +458,26 @@ const renderModalContent = ({ title, content, buttons }) => `
 
 const modalData = {
     alert: {
-        content: `<span class="status-label">Dies ist eine Alert-Nachricht!</span>`
+        content: `<span class="status-label">Dies ist eine Alert-Nachricht!</span>`,
+        buttons: `<button class="btn ok-btn">OK</button>`
     },
-    confirm: {},
-    prompt: {}
+    confirm: {
+        content: `<span class="status-label">Ist dein Name Cool?</span>`,
+        buttons: `
+            <button class="btn cancel-btn">Abbrechen</button>
+            <button class="btn yes-btn">Ok</button>
+            `
+    },
+    prompt: {
+        content: `
+            <span class="status-label">Gib deinen Namen ein</span>
+            <input type="text" id="prompt-input"/>
+        `,
+        buttons: `
+            <button class="btn cancel-btn">Abbrechen</button>
+            <button class="btn yes-btn">Ok</button>
+            `
+    }
 };
 
 
