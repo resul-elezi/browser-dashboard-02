@@ -459,8 +459,10 @@ const modalData = {
 };
 
 dashboardContent.addEventListener('click', (e) => {
+    const modal = $('.modal');
     if (e.target.matches('.ok-btn')) {
         overlay.style.display = 'none';
+        modal.remove();
     }
 })
 
