@@ -390,38 +390,6 @@ scrollBtn.addEventListener('click', () => {
 const showAlert = byId('show-alert');
 const showConfirm = byId('show-confirm');
 const showPrompt = byId('show-prompt');
-
-// showAlert.addEventListener('click', () => {
-//     alert('\u{1F310} ' + location.hostname + ':' + location.port);
-// })
-
-// Alert -> weblogo dann addresse und port
-// text
-// untenrechts ein btn mit ok
-
-// Prompt -> weblogo dann addresse und port
-// text
-// input feld
-// untenrechts abbrechen btn(grau) und ein btn mit ok
-
-
-/* <section class="panel" id="">
-        <div class="panel-header">
-          <h2 class="panel-title">Alert</h2>
-        </div>
-        <div class="panel-content">
-
-          <div class="status-item">
-            <span class="status-label">"Willkommen im Dashboard!"</span>
-          </div>
-          <div class="btn-group">
-            <button class="btn" id="show-alert">Alert anzeigen</button>
-            <button class="btn" id="show-confirm">Confirm anzeigen</button>
-            <button class="btn" id="show-prompt">Prompt anzeigen</button>
-          </div>
-        </div>
-      </section> */
-
 const dashboardContent = $('.dashboard');
 const overlay = $('.overlay');
 const modalTitles = ['alert', 'confirm', 'prompt'];
