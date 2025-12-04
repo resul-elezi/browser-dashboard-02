@@ -439,11 +439,13 @@ for (let i = 0; i < modalTitles.length; i++) {
     clickedModalBtn(i);
 }
 
-const renderModalContent = ({ title, content, buttons }) => `<section class="panel modal" id="">
+const renderModalContent = ({ title, content, buttons }) => `
+    <section class="panel modal" id="">
         <div class="panel-header">
             <h2 class="panel-title">${title}</h2>
-        </div>
-        <div class="panel-content">
+            </div>
+            <p class="status-label">\u{1F310} ${location.hostname}:${location.port}</p>
+            <div class="panel-content">
             <div class="status-item">
             ${content}
             </div>
@@ -451,7 +453,17 @@ const renderModalContent = ({ title, content, buttons }) => `<section class="pan
             ${buttons}
             </div>
         </div>
-    </section>`;
+    </section>
+`;
+
+const modalData = {
+    alert: {
+        content: `<span class="status-label">Dies ist eine Alert-Nachricht!</span>`
+    },
+    confirm: {},
+    prompt: {}
+};
+
 
 // showAlert.addEventListener('click', () => {
 //     overlay.style.display = 'block';
@@ -459,6 +471,6 @@ const renderModalContent = ({ title, content, buttons }) => `<section class="pan
 // })
 
 // showAlert.addEventListener('click', () => {
-//     let ausgabe = window.prompt('Ihren Namen bitte');
+//     let ausgabe = window.confirm('Ihren Namen bitte');
 //     alert(ausgabe);
 // })
