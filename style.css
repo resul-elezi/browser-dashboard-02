@@ -123,6 +123,7 @@ h1 {
     float: inline-end;
 }
 
+
 /* Status Items */
 .status-item {
     display: flex;
@@ -203,6 +204,12 @@ h1 {
 
 .btn:hover {
     background: #1e3c72;
+}
+
+.cancel-btn {
+    background: white;
+    color: ;
+    border: 1px solid #2a5298;
 }
 
 .btn-group {
