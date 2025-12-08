@@ -394,6 +394,7 @@ const dashboardContent = $('.dashboard');
 const overlay = $('.overlay');
 const modalTitles = ['alert', 'confirm', 'prompt'];
 let currentModalTitle = null;
+let promptValue = [];
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 const clickedModalBtn = (index) => {
@@ -461,13 +462,14 @@ const modalData = {
 dashboardContent.addEventListener('click', (e) => {
     const modal = $('.modal');
     const promptInput = byId('prompt-input');
-    const promptValue = [];
+    // const promptValue = [];
     if (e.target.matches('.ok-btn')) {
         if (promptInput) {
-            promptValue.push(promptInput.value);
+            promptValue = promptInput.value;
         }
         overlay.style.display = 'none';
         modal.remove();
     }
+
 })
 
