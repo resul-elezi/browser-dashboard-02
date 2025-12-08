@@ -440,21 +440,21 @@ const modalData = {
         buttons: `<button class="btn ok-btn">OK</button>`
     },
     confirm: {
-        content: `<span class="status-label">Ist dein Name Cool?</span>`,
+        content: `<span class="status-label">Ist dein Name ${promptValue[0]}?</span>`,
         buttons: `
-            <button class="btn cancel-btn">Abbrechen</button>
-            <button class="btn yes-btn">Ok</button>
-            `
+        <button class="btn cancel-btn">Abbrechen</button>
+        <button class="btn yes-btn">Ok</button>
+        `
     },
     prompt: {
         content: `
-            <span class="status-label">Gib deinen Namen ein</span><br>
-            <input type="text" id="prompt-input"/>
+        <span class="status-label">Gib deinen Namen ein</span><br>
+        <input type="text" id="prompt-input"/>
         `,
         buttons: `
-            <button class="btn cancel-btn">Abbrechen</button>
-            <button class="btn ok-btn">Ok</button>
-            `
+        <button class="btn cancel-btn">Abbrechen</button>
+        <button class="btn ok-btn">Ok</button>
+        `
     }
 };
 
@@ -466,7 +466,7 @@ dashboardContent.addEventListener('click', (e) => {
         if (promptInput) {
             promptValue.push(promptInput.value);
         }
-        log(promptValue[0]);
+        // log(promptValue[0]);
         overlay.style.display = 'none';
         modal.remove();
     }
