@@ -405,12 +405,12 @@ const clickedModalBtn = (index) => {
         const title = capitalize(key);
         const { content, buttons } = modalData[key];
 
-        overlay.style.display = 'block';
-        dashboardContent.innerHTML += renderModalContent({
+        // overlay.style.display = 'block';
+        dashboardContent.insertAdjacentHTML('beforeend', renderModalContent({
             title,
             content,
             buttons
-        });
+        }));
     });
 };
 
@@ -467,7 +467,7 @@ dashboardContent.addEventListener('click', (e) => {
         //     promptValue = promptInput.value;
         // }
         // overlay.style.display = 'none';
-        overlay.remove();
+        // overlay.remove();
         modal.remove();
     }
 
