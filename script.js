@@ -467,7 +467,6 @@ dashboardContent.addEventListener('click', (e) => {
         //     promptValue = promptInput.value;
         // }
         // overlay.style.display = 'none';
-        // overlay.remove();
         modal.remove();
     }
 
