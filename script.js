@@ -448,7 +448,7 @@ const modalData = {
     },
     prompt: {
         content: `
-            <span class="status-label" style="display: block !important;">Gib deinen Namen ein</span><br>
+            <span class="status-label">Gib deinen Namen ein</span><br>
             <input type="text" id="prompt-input"/>
         `,
         buttons: `
@@ -463,6 +463,7 @@ dashboardContent.addEventListener('click', (e) => {
     const promptInput = byId('prompt-input');
     const promptValue = [];
     if (e.target.matches('.ok-btn')) {
+        // if ()
         overlay.style.display = 'none';
         modal.remove();
     }
