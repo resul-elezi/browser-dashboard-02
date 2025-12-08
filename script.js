@@ -445,7 +445,7 @@ const modalData = {
         content: `<span class="status-label">Ist dein Name ${promptValue[0] || 'unbekannt'}?</span>`,
         buttons: `
         <button class="btn cancel-btn">Abbrechen</button>
-        <button class="btn yes-btn">Ok</button>
+        <button class="btn ok-btn">Ok</button>
         `
     },
     prompt: {
