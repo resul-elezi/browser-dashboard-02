@@ -395,6 +395,7 @@ const overlay = $('.overlay');
 const modalTitles = ['alert', 'confirm', 'prompt'];
 let currentModalTitle = null;
 const promptValue = [];
+const NO_NAME = 'Du hast keinen Namen eingegeben!';
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 const clickedModalBtn = (index) => {
