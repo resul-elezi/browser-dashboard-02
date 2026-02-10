@@ -465,10 +465,10 @@ dashboardContent.addEventListener('click', (e) => {
     const modal = $('.modal');
     const promptInput = byId('prompt-input');
     if (e.target.matches('.ok-btn') && promptInput) {
-        if (promptInput) {
-            promptValue.push(promptInput.value);
-            modalData.confirm.content();
-        }
+        promptValue.push(promptInput.value);
+        modalData.confirm.content();
+        // if (promptInput) {
+        // }
         // if()
         overlay.style.display = 'none';
         modal.remove();
