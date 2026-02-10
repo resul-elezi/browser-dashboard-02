@@ -459,7 +459,7 @@ const modalData = {
         `
     }
 };
-modalData.confirm.content();
+
 
 dashboardContent.addEventListener('click', (e) => {
     const modal = $('.modal');
@@ -467,7 +467,7 @@ dashboardContent.addEventListener('click', (e) => {
     if (e.target.matches('.ok-btn')) {
         if (promptInput) {
             promptValue.push(promptInput.value);
-            log(promptValue[0]);
+            modalData.confirm.content();
         }
         // if()
         overlay.style.display = 'none';
