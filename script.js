@@ -406,10 +406,11 @@ const clickedModalBtn = (index) => {
         const title = capitalize(key);
         const { content, buttons } = modalData[key];
 
-        // overlay.style.display = 'block';
+        const finalContent = typeof content === 'function' ? content() : content;
+
         dashboardContent.insertAdjacentHTML('beforeend', renderModalContent({
             title,
-            content,
+            content: finalContent,
             buttons
         }));
     });
