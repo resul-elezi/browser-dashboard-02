@@ -468,9 +468,9 @@ dashboardContent.addEventListener('click', (e) => {
     if (e.target.matches('.ok-btn')) {
         if (promptInput) {
             promptValue.push(promptInput.value);
-            modalData.confirm.content();
         }
         overlay.style.display = 'none';
+        // promptValue.pull();
         modal.remove();
     }
 
