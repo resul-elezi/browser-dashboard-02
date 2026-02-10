@@ -459,6 +459,7 @@ const modalData = {
         `
     }
 };
+modalData.confirm.content();
 
 dashboardContent.addEventListener('click', (e) => {
     const modal = $('.modal');
