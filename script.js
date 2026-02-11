@@ -490,4 +490,4 @@ const storageVis = byId('storage-visualization');
 
 // ** Local Storage (CRUD operations)
 // ** Session Storage (with automatic expiry time)
-// ** Cookies (mit Einstellungsoptionen für Pfad/Domain/Expires)
+// ** Cookies (with setting options for path/domain/expires)
