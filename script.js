@@ -465,7 +465,6 @@ const modalData = {
 dashboardContent.addEventListener('click', (e) => {
     const modal = $('.modal');
     const promptInput = byId('prompt-input');
-    // const confirmBtn = byId('confirm');
     if (e.target.matches('.ok-btn')) {
         if (promptInput) {
             promptValue.push(promptInput.value);
