@@ -471,7 +471,7 @@ dashboardContent.addEventListener('click', (e) => {
             promptValue.push(promptInput.value);
         }
         overlay.style.display = 'none';
-        modal.remove();
+        modal?.remove();
         if (e.target.matches('#confirm')) {
             promptValue.pop();
         }
