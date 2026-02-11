@@ -486,6 +486,7 @@ const storageValueInput = byId('storage-value');
 const localStorageBtn = byId('save-local');
 const sessionStorageBtn = byId('save-session');
 const setCookieBtn = byId('save-cookie');
+const storageVisualize = byId('storage-visualization');
 
 /* <div class="panel-content">
           <div class="form-group">
