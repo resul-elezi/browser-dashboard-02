@@ -489,5 +489,11 @@ const setCookieBtn = byId('save-cookie');
 const storageVis = byId('storage-visualization');
 
 // ** Local Storage (CRUD operations)
+
+
+
 // ** Session Storage (with automatic expiry time)
+
+
+
 // ** Cookies (with setting options for path/domain/expires)
