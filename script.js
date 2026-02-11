@@ -488,21 +488,6 @@ const sessionStorageBtn = byId('save-session');
 const setCookieBtn = byId('save-cookie');
 const storageVis = byId('storage-visualization');
 
-/* <div class="panel-content">
-          <div class="form-group">
-            <label for="storage-key">Schlüssel:</label>
-            <input type="text" id="storage-key" placeholder="Schlüsselname" />
-          </div>
-          <div class="form-group">
-            <label for="storage-value">Wert:</label>
-            <input type="text" id="storage-value" placeholder="Wert" />
-          </div>
-          <div class="btn-group">
-            <button class="btn" id="save-local">Local Storage</button>
-            <button class="btn" id="save-session">Session Storage</button>
-            <button class="btn" id="save-cookie">Cookie setzen</button>
-          </div>
-          <div class="visualization" id="storage-visualization">
-            Storage-Inhalte werden hier angezeigt
-          </div>
-        </div> */
+// ** Local Storage (CRUD operations)
+// ** Session Storage (mit automatischer Ablaufzeit)
+// ** Cookies (mit Einstellungsoptionen für Pfad/Domain/Expires)
