@@ -478,3 +478,6 @@ dashboardContent.addEventListener('click', (e) => {
 
 })
 
+
+// Storage-Manager
+
