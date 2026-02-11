@@ -446,7 +446,7 @@ const modalData = {
         content: () => `<span class="status-label">Ist dein Name ${promptValue[0]}?</span>`,
         buttons: `
         <button class="btn cancel-btn">Abbrechen</button>
-        <button class="btn ok-btn">Ok</button>
+        <button class="btn ok-btn" id="confirm">Ok</button>
         `
     },
     prompt: {
@@ -465,13 +465,16 @@ const modalData = {
 dashboardContent.addEventListener('click', (e) => {
     const modal = $('.modal');
     const promptInput = byId('prompt-input');
+    // const confirmBtn = byId('confirm');
     if (e.target.matches('.ok-btn')) {
         if (promptInput) {
             promptValue.push(promptInput.value);
         }
         overlay.style.display = 'none';
-        // promptValue.pop();
         modal.remove();
+        if (e.target.matches('#confirm')) {
+            promptValue.pop();
+        }
     }
 
 })
