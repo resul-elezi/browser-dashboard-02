@@ -483,13 +483,21 @@ dashboardContent.addEventListener('click', (e) => {
 
 const storageKeyInput = byId('storage-key');
 const storageValueInput = byId('storage-value');
-const localStorageBtn = byId('save-local');
-const sessionStorageBtn = byId('save-session');
+const saveLocalBtn = byId('save-local');
+const saveSessionBtn = byId('save-session');
 const setCookieBtn = byId('save-cookie');
 const storageVis = byId('storage-visualization');
 
 // ** Local Storage (CRUD operations)
-
+saveLocalBtn.addEventListener('click', () => {
+    if (!storageKeyInput.value && !storageValueInput.value) return;
+    else {
+        const key = storageKeyInput.value;
+        const value = storageValueInput.value;
+        localStorage.setItem(key, value);
+        storageVis.textContent = localStorage.getItem(key);
+    }
+})
 
 
 // ** Session Storage (with automatic expiry time)
@@ -497,3 +505,9 @@ const storageVis = byId('storage-visualization');
 
 
 // ** Cookies (with setting options for path/domain/expires)
+
+// **6. Storage-Manager**
+// - Baue eine Oberfläche zur Interaktion mit:
+//   - Local Storage (CRUD-Operationen)
+//   - Session Storage (mit automatischer Ablaufzeit)
+//   - Cookies (mit Einstellungsoptionen für Pfad/Domain/Expires)
