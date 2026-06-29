@@ -495,7 +495,9 @@ saveLocalBtn.addEventListener('click', () => {
         const key = storageKeyInput.value;
         const value = storageValueInput.value;
         localStorage.setItem(key, value);
+        // localStorage.getItem() liefert für eine Schlüssel den entsprechenden Wert aus dem Storage
         storageVis.textContent = localStorage.getItem(key);
+
     }
 })
 
