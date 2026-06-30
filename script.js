@@ -505,7 +505,8 @@ saveLocalBtn.addEventListener('click', () => {
 // ** Session Storage (with automatic expiry time)
 
 saveSessionBtn.addEventListener('click', () => {
-
+    const key = storageKeyInput.value;
+    const value = storageValueInput.value;
 })
 
 // ** Cookies (with setting options for path/domain/expires)
