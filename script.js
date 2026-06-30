@@ -490,10 +490,10 @@ const storageVis = byId('storage-visualization');
 
 // ** Local Storage (CRUD operations)
 saveLocalBtn.addEventListener('click', () => {
-    if (!storageKeyInput.value && !storageValueInput.value) return;
+    const key = storageKeyInput.value;
+    const value = storageValueInput.value;
+    if (!key && !value) return;
     else {
-        const key = storageKeyInput.value;
-        const value = storageValueInput.value;
         localStorage.setItem(key, value);
         // localStorage.getItem() liefert für eine Schlüssel den entsprechenden Wert aus dem Storage
         storageVis.textContent = localStorage.getItem(key);
@@ -504,7 +504,9 @@ saveLocalBtn.addEventListener('click', () => {
 
 // ** Session Storage (with automatic expiry time)
 
+saveSessionBtn.addEventListener('click', () => {
 
+})
 
 // ** Cookies (with setting options for path/domain/expires)
 
