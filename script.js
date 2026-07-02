@@ -526,17 +526,30 @@ function updateInput(id, newKey, newValue) {
         localStorage.setItem('inputList', JSON.stringify(inputs));
     }
 }
-saveLocalBtn.addEventListener('click', () => {
-    const key = storageKeyInput.value;
-    const value = storageValueInput.value;
-    if (!key && !value) return;
-    else {
-        localStorage.setItem(key, value);
-        // localStorage.getItem() liefert für eine Schlüssel den entsprechenden Wert aus dem Storage
-        storageVis.textContent = localStorage.getItem(key);
 
-    }
-})
+// 4. Delete (D)
+// Filter out the item you want to remove and update Local Storage.
+function deleteInput(id) {
+    inputs = JSON.parse(localStorage.getItem('inputList')) || [];
+
+    // Create a new array without the user to be deleted
+    const updatedInputs = inputs.filter(i => i.id !== id);
+
+    // Save the filtered array
+    localStorage.setItem('inputList', JSON.stringify(updatedInputs));
+}
+
+// saveLocalBtn.addEventListener('click', () => {
+//     const key = storageKeyInput.value;
+//     const value = storageValueInput.value;
+//     if (!key && !value) return;
+//     else {
+//         localStorage.setItem(key, value);
+//         // localStorage.getItem() liefert für eine Schlüssel den entsprechenden Wert aus dem Storage
+//         storageVis.textContent = localStorage.getItem(key);
+
+//     }
+// })
 
 
 // ** Session Storage (with automatic expiry time)
