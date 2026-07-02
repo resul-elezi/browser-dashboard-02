@@ -532,7 +532,7 @@ function updateInput(id, newKey, newValue) {
 function deleteInput(id) {
     inputs = JSON.parse(localStorage.getItem('inputList')) || [];
 
-    // Create a new array without the user to be deleted
+    // Create a new array without the input to be deleted
     const updatedInputs = inputs.filter(i => i.id !== id);
 
     // Save the filtered array
