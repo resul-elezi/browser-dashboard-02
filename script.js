@@ -483,18 +483,18 @@ dashboardContent.addEventListener('click', (e) => {
 
 const storageKeyInput = byId('storage-key');
 const storageValueInput = byId('storage-value');
-const saveLocalBtn = byId('save-local');
-const saveSessionBtn = byId('save-session');
+const saveLocalSBtn = byId('save-local');
+const saveSessionSBtn = byId('save-session');
 const setCookieBtn = byId('save-cookie');
 const storageVis = byId('storage-visualization');
+
+// Get existing data, or initialize an empty array
+let inputs = JSON.parse(localStorage.getItem('inputList')) || [];
 
 // ** Local Storage (CRUD operations)
 
 // 1. Create (C)
 // To create data, retrieve the current array, push the new item, and save it back to storage.
-// Get existing data, or initialize an empty array
-let inputs = JSON.parse(localStorage.getItem('inputList')) || [];
-
 function createInput(key, value) {
     const newInput = { id: Date.now(), key, value };
     inputs.push(newInput);
@@ -539,6 +539,14 @@ function deleteInput(id) {
     localStorage.setItem('inputList', JSON.stringify(updatedInputs));
 }
 
+saveLocalSBtn.addEventListener('click', () => {
+    const inputKey = storageKeyInput.value;
+    const inputValue = storageValueInput.value;
+
+    createInput(inputKey, inputValue)
+    console.log('inputList');
+})
+
 // saveLocalBtn.addEventListener('click', () => {
 //     const key = storageKeyInput.value;
 //     const value = storageValueInput.value;
@@ -554,10 +562,10 @@ function deleteInput(id) {
 
 // ** Session Storage (with automatic expiry time)
 
-saveSessionBtn.addEventListener('click', () => {
-    const key = storageKeyInput.value;
-    const value = storageValueInput.value;
-})
+// saveSessionBtn.addEventListener('click', () => {
+//     const key = storageKeyInput.value;
+//     const value = storageValueInput.value;
+// })
 
 // ** Cookies (with setting options for path/domain/expires)
 
