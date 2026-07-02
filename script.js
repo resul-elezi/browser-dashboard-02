@@ -491,16 +491,20 @@ const storageVis = byId('storage-visualization');
 // ** Local Storage (CRUD operations)
 
 // Get existing data, or initialize an empty array
-let inputs = JSON.parse(localStorage.getItem('inputsList')) || [];
+let inputs = JSON.parse(localStorage.getItem('inputList')) || [];
 
 function createInput(key, value) {
     const newInput = { id: Date.now(), key, value };
     inputs.push(newInput);
 
     // Save to Local Storage
-    localStorage.setItem('inputLists', JSON.stringify(inputs));
+    localStorage.setItem('inputList', JSON.stringify(inputs));
 }
 
+function readInputs() {
+    const storedInputs = JSON.parse(localStorage.getItem('inputList')) || [];
+    return storedInputs;
+}
 saveLocalBtn.addEventListener('click', () => {
     const key = storageKeyInput.value;
     const value = storageValueInput.value;
