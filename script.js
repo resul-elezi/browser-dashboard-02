@@ -544,7 +544,21 @@ saveLocalSBtn.addEventListener('click', () => {
     const inputValue = storageValueInput.value;
 
     createInput(inputKey, inputValue)
-    console.log('inputList');
+    storageVis.innerHTML = `
+        <h3>Local Storage Einträge</h3>
+        <table>
+            <thead>
+                <tr><th>Schlüssel</th>
+                    <th>Wert</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>${inputs.key[0]}</td>
+                    <td>${inputs.value[0]}</td>
+                </tr>
+            </tbody>
+        </table>`
 })
 
 // saveLocalBtn.addEventListener('click', () => {
