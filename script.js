@@ -490,6 +490,8 @@ const storageVis = byId('storage-visualization');
 
 // ** Local Storage (CRUD operations)
 
+// 1. Create (C)
+// To create data, retrieve the current array, push the new item, and save it back to storage.
 // Get existing data, or initialize an empty array
 let inputs = JSON.parse(localStorage.getItem('inputList')) || [];
 
@@ -501,9 +503,28 @@ function createInput(key, value) {
     localStorage.setItem('inputList', JSON.stringify(inputs));
 }
 
+// 2. Read (R)
+// Because Local Storage clears when the user clears cache, always use a fallback || [] when fetching data.
 function readInputs() {
     const storedInputs = JSON.parse(localStorage.getItem('inputList')) || [];
     return storedInputs;
+}
+
+// 3. Update (U)
+// Identify an item by its unique ID, modify its properties, and overwrite the existing Local Storage array.
+function updateInput(id, newKey, newValue) {
+    inputs = JSON.parse(localStorage.getItem('inputList')) || [];
+
+    // Find the index of the input => i
+    const index = inputs.findIndex(i => i.id = id);
+
+    if (index !== -1) {
+        inputs[index].key = newKey;
+        inputs[index].value = newValue;
+
+        // Overwrite the array in storage
+        localStorage.setItem('inputList', JSON.stringify(inputs));
+    }
 }
 saveLocalBtn.addEventListener('click', () => {
     const key = storageKeyInput.value;
