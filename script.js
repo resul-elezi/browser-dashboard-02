@@ -489,6 +489,17 @@ const setCookieBtn = byId('save-cookie');
 const storageVis = byId('storage-visualization');
 
 // ** Local Storage (CRUD operations)
+
+let inputs = JSON.parse(localStorage.getItem('inputsList')) || [];
+
+function createInputs(key, value) {
+    const newInput = { id: Date.now(), key, value };
+    inputs.push(newInput);
+
+    // Save to Local Storage
+    localStorage.setItem('inputLists', JSON.stringify(inputs));
+}
+
 saveLocalBtn.addEventListener('click', () => {
     const key = storageKeyInput.value;
     const value = storageValueInput.value;
