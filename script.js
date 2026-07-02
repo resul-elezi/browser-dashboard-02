@@ -493,7 +493,7 @@ const storageVis = byId('storage-visualization');
 // Get existing data, or initialize an empty array
 let inputs = JSON.parse(localStorage.getItem('inputsList')) || [];
 
-function createInputs(key, value) {
+function createInput(key, value) {
     const newInput = { id: Date.now(), key, value };
     inputs.push(newInput);
 
