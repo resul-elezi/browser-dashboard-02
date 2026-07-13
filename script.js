@@ -490,68 +490,68 @@ const storageVis = byId('storage-visualization');
 
 // Get existing data, or initialize an empty array
 let firstKey = localStorage.key(0);
-let inputs = localStorage.getItem(firstKey) || [];
+// let inputs = localStorage.getItem(firstKey) || [];
 
 // localStorage.removeItem(firstKey);
-// log(inputs)
+log(firstKey);
 // ** Local Storage (CRUD operations)
 
 // 1. Create (C)
 // To create data, retrieve the current array, push the new item, and save it back to storage.
-function createInput(key, value) {
-    key = storageKeyInput.value;
-    value = storageValueInput.value;
-    const newInput = { id: Date.now(), key, value };
-    inputs.push(newInput);
+// function createInput(key, value) {
+//     key = storageKeyInput.value;
+//     value = storageValueInput.value;
+//     const newInput = { id: Date.now(), key, value };
+//     inputs.push(newInput);
 
 
-    // Save to Local Storage
-    localStorage.setItem(storageKeyInput.value, JSON.stringify(inputs));
-}
+//     // Save to Local Storage
+//     localStorage.setItem(storageKeyInput.value, JSON.stringify(inputs));
+// }
 
 // 2. Read (R)
 // Because Local Storage clears when the user clears cache, always use a fallback || [] when fetching data.
-function readInputs() {
-    const storedInputs = localStorage.getItem(firstKey) || [];
-    return storedInputs;
-}
+// function readInputs() {
+//     const storedInputs = localStorage.getItem(firstKey) || [];
+//     return storedInputs;
+// }
 
 // 3. Update (U)
 // Identify an item by its unique ID, modify its properties, and overwrite the existing Local Storage array.
-function updateInput(id, newKey, newValue) {
-    inputs = localStorage.getItem(firstKey) || [];
+// function updateInput(id, newKey, newValue) {
+//     inputs = localStorage.getItem(firstKey) || [];
 
-    // Find the index of the input => i
-    const index = inputs.findIndex(i => i.id = id);
+//     // Find the index of the input => i
+//     const index = inputs.findIndex(i => i.id = id);
 
-    if (index !== -1) {
-        inputs[index].key = newKey;
-        inputs[index].value = newValue;
+//     if (index !== -1) {
+//         inputs[index].key = newKey;
+//         inputs[index].value = newValue;
 
-        // Overwrite the array in storage
-        localStorage.setItem(storageKeyInput.value, JSON.stringify(inputs));
-    }
-}
+//         // Overwrite the array in storage
+//         localStorage.setItem(storageKeyInput.value, JSON.stringify(inputs));
+//     }
+// }
 
 // 4. Delete (D)
 // Filter out the item you want to remove and update Local Storage.
-function deleteInput(id) {
-    inputs = localStorage.getItem(firstKey) || [];
+// function deleteInput(id) {
+//     inputs = localStorage.getItem(firstKey) || [];
 
-    // Create a new array without the input to be deleted
-    const updatedInputs = inputs.filter(i => i.id !== id);
+//     // Create a new array without the input to be deleted
+//     const updatedInputs = inputs.filter(i => i.id !== id);
 
-    // Save the filtered array
-    localStorage.setItem(storageKeyInput.value, JSON.stringify(updatedInputs));
-}
+//     // Save the filtered array
+//     localStorage.setItem(storageKeyInput.value, JSON.stringify(updatedInputs));
+// }
 
 saveLocalSBtn.addEventListener('click', () => {
     const inputKey = storageKeyInput.value;
     const inputValue = storageValueInput.value;
 
-    createInput(inputKey, inputValue)
+    // createInput(inputKey, inputValue)
     storageVis.innerHTML = `
-        <h3>Local Storage Einträge</h3>
+        <h3>Local Storage Einträge</h3><br>
         <table>
             <thead>
                 <tr><th>Schlüssel</th>
@@ -560,8 +560,8 @@ saveLocalSBtn.addEventListener('click', () => {
             </thead>
             <tbody>
                 <tr>
-                    <td>${inputs.key[0]}</td>
-                    <td>${inputs.value[0]}</td>
+                    <td>${inputKey}</td>
+                    <td>${inputValue}</td>
                 </tr>
             </tbody>
         </table>`
