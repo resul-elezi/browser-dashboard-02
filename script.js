@@ -489,7 +489,8 @@ const setCookieBtn = byId('save-cookie');
 const storageVis = byId('storage-visualization');
 
 // Get existing data, or initialize an empty array
-let inputs = JSON.parse(localStorage.getItem('inputList')) || [];
+let firstKey = localStorage.key(0);
+let inputs = JSON.parse(localStorage.getItem(firstKey)) || [];
 
 // ** Local Storage (CRUD operations)
 
@@ -506,7 +507,7 @@ function createInput(key, value) {
 // 2. Read (R)
 // Because Local Storage clears when the user clears cache, always use a fallback || [] when fetching data.
 function readInputs() {
-    const storedInputs = JSON.parse(localStorage.getItem('inputList')) || [];
+    const storedInputs = JSON.parse(localStorage.getItem(firstKey)) || [];
     return storedInputs;
 }
 
