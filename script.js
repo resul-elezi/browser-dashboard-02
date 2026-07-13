@@ -489,8 +489,8 @@ const setCookieBtn = byId('save-cookie');
 const storageVis = byId('storage-visualization');
 
 // Get existing data, or initialize an empty array
-let firstKey = localStorage.key(0);
-let inputs = JSON.parse(localStorage.getItem(firstKey)) || [];
+let firstKey = JSON.parse(localStorage.key(0));
+let inputs = localStorage.getItem(firstKey) || [];
 
 // ** Local Storage (CRUD operations)
 
@@ -500,21 +500,22 @@ function createInput(key, value) {
     const newInput = { id: Date.now(), key, value };
     inputs.push(newInput);
 
+
     // Save to Local Storage
-    localStorage.setItem('inputList', JSON.stringify(inputs));
+    localStorage.setItem(storageKeyInput.value, JSON.stringify(inputs));
 }
 
 // 2. Read (R)
 // Because Local Storage clears when the user clears cache, always use a fallback || [] when fetching data.
 function readInputs() {
-    const storedInputs = JSON.parse(localStorage.getItem(firstKey)) || [];
+    const storedInputs = localStorage.getItem(firstKey) || [];
     return storedInputs;
 }
 
 // 3. Update (U)
 // Identify an item by its unique ID, modify its properties, and overwrite the existing Local Storage array.
 function updateInput(id, newKey, newValue) {
-    inputs = JSON.parse(localStorage.getItem('inputList')) || [];
+    inputs = localStorage.getItem(firstKey) || [];
 
     // Find the index of the input => i
     const index = inputs.findIndex(i => i.id = id);
@@ -524,20 +525,20 @@ function updateInput(id, newKey, newValue) {
         inputs[index].value = newValue;
 
         // Overwrite the array in storage
-        localStorage.setItem('inputList', JSON.stringify(inputs));
+        localStorage.setItem(storageKeyInput.value, JSON.stringify(inputs));
     }
 }
 
 // 4. Delete (D)
 // Filter out the item you want to remove and update Local Storage.
 function deleteInput(id) {
-    inputs = JSON.parse(localStorage.getItem('inputList')) || [];
+    inputs = localStorage.getItem(firstKey) || [];
 
     // Create a new array without the input to be deleted
     const updatedInputs = inputs.filter(i => i.id !== id);
 
     // Save the filtered array
-    localStorage.setItem('inputList', JSON.stringify(updatedInputs));
+    localStorage.setItem(storageKeyInput.value, JSON.stringify(updatedInputs));
 }
 
 saveLocalSBtn.addEventListener('click', () => {
