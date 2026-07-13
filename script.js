@@ -549,6 +549,8 @@ saveLocalSBtn.addEventListener('click', () => {
     const inputKey = storageKeyInput.value;
     const inputValue = storageValueInput.value;
 
+    localStorage.setItem(inputKey, inputValue)
+
     // createInput(inputKey, inputValue)
     storageVis.innerHTML = `
         <h3>Local Storage Einträge</h3><br>
