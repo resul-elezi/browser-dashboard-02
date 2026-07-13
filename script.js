@@ -492,6 +492,8 @@ const storageVis = byId('storage-visualization');
 let firstKey = localStorage.key(0);
 let inputs = localStorage.getItem(firstKey) || [];
 
+// localStorage.removeItem(firstKey);
+// log(inputs)
 // ** Local Storage (CRUD operations)
 
 // 1. Create (C)
