@@ -489,7 +489,7 @@ const setCookieBtn = byId('save-cookie');
 const storageVis = byId('storage-visualization');
 
 // Get existing data, or initialize an empty array
-let firstKey = JSON.parse(localStorage.key(0));
+let firstKey = localStorage.key(0);
 let inputs = localStorage.getItem(firstKey) || [];
 
 // ** Local Storage (CRUD operations)
@@ -497,6 +497,8 @@ let inputs = localStorage.getItem(firstKey) || [];
 // 1. Create (C)
 // To create data, retrieve the current array, push the new item, and save it back to storage.
 function createInput(key, value) {
+    key = storageKeyInput.value;
+    value = storageValueInput.value;
     const newInput = { id: Date.now(), key, value };
     inputs.push(newInput);
 
