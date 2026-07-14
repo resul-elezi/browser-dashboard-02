@@ -496,9 +496,10 @@ for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const value = localStorage.getItem(key);
 
-    inputs.push(key, value);
+    // inputs.push([{ key: value }]);
+    log(key, value)
 }
-log(inputs);
+// log(inputs);
 
 
 // ** Local Storage (CRUD operations)
