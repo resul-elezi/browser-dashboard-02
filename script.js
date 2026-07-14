@@ -493,21 +493,16 @@ let firstKey = localStorage.key(0);
 // let inputs = localStorage.getItem(firstKey) || [];
 
 // localStorage.removeItem(firstKey);
-log(firstKey);
+// log(firstKey);
 // ** Local Storage (CRUD operations)
 
 // 1. Create (C)
 // To create data, retrieve the current array, push the new item, and save it back to storage.
-// function createInput(key, value) {
-//     key = storageKeyInput.value;
-//     value = storageValueInput.value;
-//     const newInput = { id: Date.now(), key, value };
-//     inputs.push(newInput);
+function createInput(key, value) {
 
-
-//     // Save to Local Storage
-//     localStorage.setItem(storageKeyInput.value, JSON.stringify(inputs));
-// }
+    // Save to Local Storage
+    localStorage.setItem(key, value);
+}
 
 // 2. Read (R)
 // Because Local Storage clears when the user clears cache, always use a fallback || [] when fetching data.
@@ -549,7 +544,7 @@ saveLocalSBtn.addEventListener('click', () => {
     const inputKey = storageKeyInput.value;
     const inputValue = storageValueInput.value;
 
-    localStorage.setItem(inputKey, inputValue)
+    createInput(inputKey, inputValue);
 
     // createInput(inputKey, inputValue)
     storageVis.innerHTML = `
