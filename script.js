@@ -489,11 +489,18 @@ const setCookieBtn = byId('save-cookie');
 const storageVis = byId('storage-visualization');
 
 // Get existing data, or initialize an empty array
-let firstKey = localStorage.key(0);
-// let inputs = localStorage.getItem(firstKey) || [];
 
-// localStorage.removeItem(firstKey);
-// log(firstKey);
+let inputs = [];
+
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+
+    inputs.push(key, value);
+}
+log(inputs);
+
+
 // ** Local Storage (CRUD operations)
 
 // 1. Create (C)
@@ -546,7 +553,6 @@ saveLocalSBtn.addEventListener('click', () => {
 
     createInput(inputKey, inputValue);
 
-    // createInput(inputKey, inputValue)
     storageVis.innerHTML = `
         <h3>Local Storage Einträge</h3><br>
         <table>
