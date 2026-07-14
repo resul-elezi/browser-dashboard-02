@@ -163,6 +163,41 @@ h1 {
     flex-direction: column;
 }
 
+table {
+    width: 80%;
+    /* border-spacing: .25rem; */
+    /* border: 1px solid red; */
+}
+
+th {
+    padding: .25rem .125rem;
+    text-transform: uppercase;
+    /* border-block: 1px solid black; */
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background: lightgray;
+}
+
+td:nth-child(1) {
+    font-weight: bold;
+    width: 6.25rem;
+}
+
+td {
+    padding: .25rem .125rem;
+}
+
+tr {
+    transition: color .3s ease, background .3s ease;
+}
+
+tr:hover {
+    background: #2a5298;
+    color: white;
+}
+
 .canvas-div {
     height: 10rem;
     padding: 1rem 1rem .25rem .5rem;
